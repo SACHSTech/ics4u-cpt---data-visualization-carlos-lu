@@ -12,8 +12,7 @@ import javafx.stage.Stage;
 public class BarChartApp extends Application {  
 @Override  
 public void start(Stage primaryStage) throws Exception {  
-    // TODO Auto-generated method stub  
-    //Defining string to label XAxis   
+ 
     String NonGame = "NonGame";  
     String Indie = "Indie";  
     String Action = "Action";  
@@ -28,13 +27,12 @@ public void start(Stage primaryStage) throws Exception {
     String Racing = "Racing";
     String MassivelyMultiplayer = "MassivelyMultiplayer";
       
-    //Configuring category and NumberAxis   
+
     CategoryAxis xaxis= new CategoryAxis();  
     NumberAxis yaxis = new NumberAxis(0,200,10);  
     xaxis.setLabel("Genre");  
     yaxis.setLabel("Total Games Sold");  
-      
-    //Configuring BarChart   
+
     BarChart<String,Float> bar = new BarChart(xaxis,yaxis);  
     bar.setTitle("Dollar Conversion chart");  
       
@@ -54,10 +52,10 @@ public void start(Stage primaryStage) throws Exception {
     series.getData().add(new XYChart.Data(Racing,00));
     series.getData().add(new XYChart.Data(MassivelyMultiplayer,00));      
       
-    //Adding series to the barchart   
+ 
     bar.getData().add(series);  
       
-    // configuring group and scene   
+ 
     Group root = new Group();  
     root.getChildren().add(bar);  
     Scene scene = new Scene(root,600,400);  
