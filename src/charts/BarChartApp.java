@@ -34,7 +34,7 @@ public void start(Stage primaryStage) throws Exception {
     yaxis.setLabel("Total Games Sold");  
 
     BarChart<String,Float> bar = new BarChart(xaxis,yaxis);  
-    bar.setTitle("Dollar Conversion chart");  
+    bar.setTitle("Top Selling Games Of 2020");  
       
     //Configuring Series for XY chart   
     XYChart.Series<String,Float> series = new XYChart.Series<>();  
