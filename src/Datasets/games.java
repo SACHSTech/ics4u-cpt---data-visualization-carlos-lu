@@ -187,6 +187,40 @@ public class games {
     public boolean getGenreIsFreeToPlay() {
         return Boolean.parseBoolean(this.GenreIsFreeToPlay);
     }
+    public boolean getGenreIsIndie() {
+        return Boolean.parseBoolean(this.GenreIsIndie);
+    }
+    public boolean getGenreIsAction() {
+        return Boolean.parseBoolean(this.GenreIsAction);
+    }
+    public boolean getGenreIsAdventure() {
+        return Boolean.parseBoolean(this.GenreIsAdventure);
+    }
+    public boolean getGenreIsCasual() {
+        return Boolean.parseBoolean(this.GenreIsCasual);
+    }
+    public boolean getGenreIsStrategy() {
+        return Boolean.parseBoolean(this.GenreIsStrategy);
+    }
+    public boolean getGenreIsRPG() {
+        return Boolean.parseBoolean(this.GenreIsRPG);
+    }
+    public boolean getGenreIsSimulation() {
+        return Boolean.parseBoolean(this.GenreIsSimulation);
+    }
+    public boolean getGenreIsEarlyAccess() {
+        return Boolean.parseBoolean(this.GenreIsEarlyAccess);
+    }
+    public boolean getGenreIsSports() {
+        return Boolean.parseBoolean(this.GenreIsSports);
+    }
+    public boolean getGenreIsRacing() {
+        return Boolean.parseBoolean(this.GenreIsRacing);
+    }
+    public boolean getGenreIsMassivelyMultiplayer() {
+        return Boolean.parseBoolean(this.GenreIsMassivelyMultiplayer);
+    }
 
+    
     
 }
