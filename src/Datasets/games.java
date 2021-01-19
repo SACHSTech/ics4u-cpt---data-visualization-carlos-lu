@@ -72,7 +72,7 @@ public class games {
     private String DRMNotice;
     private String ExtUserAcctNotice;
     private String HeaderImage;
-    private String LegalNoticel;
+    private String LegalNotice;
     private String Reviews;
     private String SupportedLanguages;
     private String Website;
@@ -86,85 +86,107 @@ public class games {
     public games(String QueryID, String ResponseID, String QueryName, String ResponseName, String ReleaseDate, String RequiredAge, String DemoCount, String DeveloperCount, String DLCCount, String Metacritic, String MovieCount, String PackageCount, String RecommendationCount, String PublisherCount, String ScreenshotCount, String SteamSpyOwners, String SteamSpyOwnersVariance, String SteamSpyPlayersEstimate, String SteamSpyPlayersVariance, String AchievementCount, String AchievementHighlightedCount,String ControllerSupport, String IsFree, String FreeVerAvail, String PurchaseAvail, String SubscriptionAvail, String PlatformWindows, String PlatformLinux, String PlatformMac, String PCReqsHaveMin, String PCReqsHaveRec, String LinuxReqsHaveMin, String LinuxReqsHaveRec, String MacReqsHaveMin, String MacReqsHaveRec, String CategorySinglePlayer, String CategoryMultiplayer, String CategoryCoop, String CategoryMMO, String CategoryInAppPurchase, String CategoryIncludeSrcSDK, String CategoryIncludeLevelEditor, String CategoryVRSupport, String GenreIsNonGame, String GenreIsIndie, String GenreIsAction, String GenreIsAdventure, String GenreIsCasual, String GenreIsStrategy, String GenreIsRPG, String GenreIsSimulation, String GenreIsEarlyAccess, String GenreIsFreeToPlay, String GenreIsSports, String GenreIsRacing, String GenreIsMassivelyMultiplayer, String PriceCurrency, String PriceInitial, String PriceFinal, String SupportEmail, String SupportURL, String AboutText, String Background, String ShortDescrip, String DetailedDescrip, String DRMNotice, String ExtUserAcctNotice, String HeaderImage, String LegalNotice, String Reviews, String SupportedLanguages, String Website, String PCMinReqsText, String PCRecReqsText, String LinuxMinReqsText, String LinuxRecReqsText, String StringMacMinReqsText, String MacRecReqsText) {
         this.QueryID = QueryID;
         this.ResponseID = ResponseID;
-        this.QueryName = QueryName
-        this.ResponseName = ResponseName
-        this.ReleaseDate = 
-        this.RequiredAge = 
-        this.DemoCount = 
-        this.DeveloperCount = 
-        this.DLCCount = 
-        this.Metacritic = 
-        this.MovieCount = 
-        this.PackageCount = 
-        this.RecommendationCount = 
-        this.PublisherCount = 
-        this.ScreenshotCount = 
-        this.SteamSpyOwners = 
-        this.SteamSpyOwnersVariance = 
-        this.SteamSpyPlayersEstimate = 
-        this.SteamSpyPlayersVariance = 
-        this.AchievementCount = 
-        this.AchievementHighlightedCount = 
-        this.ControllerSupport = 
-        this.IsFree = 
-        this.FreeVerAvail = 
-        this.PurchaseAvail = 
-        this.SubscriptionAvail = 
-        this.PlatformWindows = 
-        this.PlatformLinux = 
-        this.PlatformMac = 
-        this.PCReqsHaveMin = 
-        this.PCReqsHaveRec = 
-        this.LinuxReqsHaveMin = 
-        this.LinuxReqsHaveRec = 
-        this.MacReqsHaveMin = 
-        this.MacReqsHaveRec = 
-        this.CategorySinglePlayer = 
-        this.CategoryMultiplayer = 
-        this.CategoryCoop = 
-        this.CategoryMMO = 
-        this.CategoryInAppPurchase = 
-        this.CategoryIncludeSrcSDK = 
-        this.CategoryIncludeLevelEditor = 
-        this.CategoryVRSupport = 
-        this.GenreIsNonGame = 
-        this.GenreIsIndie = 
-        this.GenreIsAction = 
-        this.GenreIsAdventure = 
-        this.GenreIsCasual = 
-        this.GenreIsStrategy = 
-        this.GenreIsRPG = 
-        this.GenreIsSimulation = 
-        this.GenreIsEarlyAccess = 
-        this.GenreIsFreeToPlay = 
-        this.GenreIsSports = 
-        this.GenreIsRacing = 
-        this.GenreIsMassivelyMultiplayer = 
-        this.PriceCurrency = 
-        this.PriceInitial = 
-        this.PriceFinal = 
-        this.SupportEmail = 
-        this.SupportURL = 
-        this.AboutText = 
-        this.Background = 
-        this.ShortDescrip = 
-        this.DetailedDescrip = 
-        this.DRMNotice = 
-        this.ExtUserAcctNotice = 
-        this.HeaderImage = 
-        this.LegalNoticel = 
-        this.Reviews = 
-        this.SupportedLanguages = 
-        this.Website = 
-        this.PCMinReqsText = 
-        this.PCRecReqsText = 
-        this.LinuxMinReqsText = 
-        this.LinuxRecReqsText = 
-        this.StringMacMinReqsText = 
-        this.MacRecReqsText = 
+        this.QueryName = QueryName;
+        this.ResponseName = ResponseName;
+        this.ReleaseDate = ReleaseDate;
+        this.RequiredAge = RequiredAge;
+        this.DemoCount = DemoCount;
+        this.DeveloperCount = DeveloperCount;
+        this.DLCCount = DLCCount;
+        this.Metacritic = Metacritic;
+        this.MovieCount = MovieCount;
+        this.PackageCount = PackageCount;
+        this.RecommendationCount = RecommendationCount;
+        this.PublisherCount = PublisherCount;
+        this.ScreenshotCount = ScreenshotCount;
+        this.SteamSpyOwners = SteamSpyOwners;
+        this.SteamSpyOwnersVariance = SteamSpyOwnersVariance;
+        this.SteamSpyPlayersEstimate = SteamSpyPlayersEstimate;
+        this.SteamSpyPlayersVariance = SteamSpyPlayersVariance;
+        this.AchievementCount = AchievementCount;
+        this.AchievementHighlightedCount = AchievementHighlightedCount;
+        this.ControllerSupport = ControllerSupport;
+        this.IsFree = IsFree;
+        this.FreeVerAvail = FreeVerAvail;
+        this.PurchaseAvail = PurchaseAvail;
+        this.SubscriptionAvail = SubscriptionAvail;
+        this.PlatformWindows = PlatformWindows;
+        this.PlatformLinux = PlatformLinux;
+        this.PlatformMac = PlatformMac;
+        this.PCReqsHaveMin = PCReqsHaveMin;
+        this.PCReqsHaveRec = PCReqsHaveRec;
+        this.LinuxReqsHaveMin = LinuxReqsHaveMin;
+        this.LinuxReqsHaveRec = LinuxReqsHaveRec;
+        this.MacReqsHaveMin = MacReqsHaveMin;
+        this.MacReqsHaveRec = MacReqsHaveRec;
+        this.CategorySinglePlayer = CategorySinglePlayer;
+        this.CategoryMultiplayer = CategoryMultiplayer;
+        this.CategoryCoop = CategoryCoop;
+        this.CategoryMMO = CategoryMMO;
+        this.CategoryInAppPurchase = CategoryInAppPurchase;
+        this.CategoryIncludeSrcSDK = CategoryIncludeSrcSDK;
+        this.CategoryIncludeLevelEditor = CategoryIncludeLevelEditor;
+        this.CategoryVRSupport = CategoryVRSupport;
+        this.GenreIsNonGame = GenreIsNonGame;
+        this.GenreIsIndie = GenreIsIndie;
+        this.GenreIsAction = GenreIsAction;
+        this.GenreIsAdventure = GenreIsAdventure;
+        this.GenreIsCasual = GenreIsCasual;
+        this.GenreIsStrategy = GenreIsStrategy;
+        this.GenreIsRPG = GenreIsRPG;
+        this.GenreIsSimulation = GenreIsSimulation;
+        this.GenreIsEarlyAccess = GenreIsEarlyAccess;
+        this.GenreIsFreeToPlay = GenreIsFreeToPlay;
+        this.GenreIsSports = GenreIsSports;
+        this.GenreIsRacing = GenreIsRacing;
+        this.GenreIsMassivelyMultiplayer = GenreIsMassivelyMultiplayer;
+        this.PriceCurrency = PriceCurrency;
+        this.PriceInitial = PriceInitial;
+        this.PriceFinal = PriceFinal;
+        this.SupportEmail = SupportEmail;
+        this.SupportURL = SupportURL;
+        this.AboutText = AboutText;
+        this.Background = Background;
+        this.ShortDescrip = ShortDescrip;
+        this.DetailedDescrip = DetailedDescrip;
+        this.DRMNotice = DRMNotice;
+        this.ExtUserAcctNotice = ExtUserAcctNotice;
+        this.HeaderImage = HeaderImage;
+        this.LegalNotice = LegalNotice;
+        this.Reviews = Reviews;
+        this.SupportedLanguages = SupportedLanguages;
+        this.Website = Website;
+        this.PCMinReqsText = PCMinReqsText;
+        this.PCRecReqsText = PCRecReqsText;
+        this.LinuxMinReqsText = LinuxMinReqsText;
+        this.LinuxRecReqsText = LinuxRecReqsText;
+        this.StringMacMinReqsText = StringMacMinReqsText;
+        this.MacRecReqsText = MacRecReqsText;
     }
 
-    public int getSetLines() {
-        
+    public String getWebsite() {
+        return this.Website;
     }
+
+    public int getQueryID() {
+        return Integer.parseInt(this.QueryID);
+    }
+
+    public String getQueryName() {
+        return this.QueryName;
+    }
+
+    public boolean getIsFree() {
+        return Boolean.parseBoolean(this.IsFree);
+    }
+
+    public boolean getGenreIsNonGame() {
+        return Boolean.parseBoolean(this.GenreIsNonGame);
+    }
+
+    public boolean getGenreIsFreeToPlay() {
+        return Boolean.parseBoolean(this.GenreIsFreeToPlay);
+    }
+
+    
 }

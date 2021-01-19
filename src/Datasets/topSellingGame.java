@@ -18,6 +18,12 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+/*
+ * This is the main program that's going to read through the CSV file then put them in games.java to make them objects, just for cleanliness.
+ * 
+ * It 
+ */
+
 public class topSellingGame {
     //run 
     public static void main(String[] args) throws IOException {
@@ -26,7 +32,6 @@ public class topSellingGame {
 
         //set bufferReader for CSV file
         Scanner gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv"));
-        String 
 
         gamesCSV.useDelimiter(","); //pattern use , to seperate
 
@@ -37,6 +42,13 @@ public class topSellingGame {
         }
 
         gamesCSV.close(); //close file
+        gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv")); //reopen file
+
+        games[] topSellgames = new games[intCounter];
+
+        for (int intCount = 0; intCount < intCounter; intCount++) {
+
+        }
 
         
     }
