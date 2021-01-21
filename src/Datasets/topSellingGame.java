@@ -44,10 +44,12 @@ public class topSellingGame {
         gamesCSV.close(); //close file
         gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv")); //reopen file
 
+        intCounter = intCounter / 77; // There are 77 private variables in a line in csv file
+
         games[] topSellgames = new games[intCounter];
 
         for (int intCount = 0; intCount < intCounter; intCount++) {
-
+            
         }
 
         
