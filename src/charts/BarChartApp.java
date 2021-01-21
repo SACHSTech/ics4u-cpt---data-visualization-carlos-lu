@@ -1,61 +1,69 @@
 /* ....Show License.... */
 package charts;
+
+import javafx.application.Application;  
+import javafx.scene.Group;  
+import javafx.scene.Scene;  
+import javafx.scene.chart.BarChart;  
+import javafx.scene.chart.CategoryAxis;  
+import javafx.scene.chart.NumberAxis;  
+import javafx.scene.chart.XYChart;  
+import javafx.stage.Stage;  
+public class BarChartApp extends Application {  
+@Override  
+public void start(Stage primaryStage) throws Exception {  
  
-import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
-import javafx.scene.chart.BarChart;
-import javafx.scene.chart.CategoryAxis;
-import javafx.scene.chart.NumberAxis;
-import javafx.stage.Stage;
+    String NonGame = "NonGame";  
+    String Indie = "Indie";  
+    String Action = "Action";  
+    String Adventure = "Adventure";  
+    String Casual = "Casual";
+    String Strategy = "Strategy";
+    String RPG = "RPG";
+    String Simulation = "Simulation";
+    String EarlyAccess = "EarlyAccess";
+    String FreeToPlay = "FreeToPlay";
+    String Sports = "Sports";
+    String Racing = "Racing";
+    String MassivelyMultiplayer = "MassivelyMultiplayer";
+      
+
+    CategoryAxis xaxis= new CategoryAxis();  
+    NumberAxis yaxis = new NumberAxis(0,200,10);  
+    xaxis.setLabel("Genre");  
+    yaxis.setLabel("Total Games Sold");  
+
+    BarChart<String,Float> bar = new BarChart(xaxis,yaxis);  
+    bar.setTitle("Top Selling Games Of 2020");  
+      
+    //Configuring Series for XY chart   
+    XYChart.Series<String,Float> series = new XYChart.Series<>();  
+    series.getData().add(new XYChart.Data(NonGame,00));  
+    series.getData().add(new XYChart.Data(Indie,00));  
+    series.getData().add(new XYChart.Data(Action,00));  
+    series.getData().add(new XYChart.Data(Adventure,00));
+    series.getData().add(new XYChart.Data(Casual,00));  
+    series.getData().add(new XYChart.Data(Strategy,00));  
+    series.getData().add(new XYChart.Data(RPG,00));
+    series.getData().add(new XYChart.Data(Simulation,00));  
+    series.getData().add(new XYChart.Data(EarlyAccess,00));  
+    series.getData().add(new XYChart.Data(FreeToPlay,00));  
+    series.getData().add(new XYChart.Data(Sports,00));  
+    series.getData().add(new XYChart.Data(Racing,00));
+    series.getData().add(new XYChart.Data(MassivelyMultiplayer,00));      
+      
  
+    bar.getData().add(series);  
+      
  
-/**
- * A chart that displays rectangular bars with heights indicating data values
- * for categories. Used for displaying information when at least one axis has
- * discontinuous or discrete data.
- */
-public class BarChartApp extends Application {
- 
-    private BarChart chart;
-    private CategoryAxis xAxis;
-    private NumberAxis yAxis;
- 
-    public Parent createContent() {
-        String[] years = {"1", "2", "3","4","5","6","7"};
-        xAxis = new CategoryAxis();
-        xAxis.setCategories(FXCollections.<String>observableArrayList(years));
-        yAxis = new NumberAxis("Units Sold", 0.0d, 100.0d, 50.0d);
-        ObservableList<BarChart.Series> barChartData =
-            FXCollections.observableArrayList(
-              new BarChart.Series("Apples", FXCollections.observableArrayList(
-                new BarChart.Data(years[0], 567d),
-                new BarChart.Data(years[1], 1292d),
-                new BarChart.Data(years[2], 1292d))),
-              new BarChart.Series("Lemons", FXCollections.observableArrayList(
-                new BarChart.Data(years[0], 956),
-                new BarChart.Data(years[1], 1665),
-                new BarChart.Data(years[2], 2559))),
-              new BarChart.Series("Oranges", FXCollections.observableArrayList(
-                new BarChart.Data(years[0], 1154),
-                new BarChart.Data(years[1], 1927),
-                new BarChart.Data(years[2], 2774)))
-            );
-        chart = new BarChart(xAxis, yAxis, barChartData, 25.0d);
-        return chart;
-    }
- 
-    @Override public void start(Stage primaryStage) throws Exception {
-        primaryStage.setScene(new Scene(createContent()));
-        primaryStage.show();
-    }
- 
-    /**
-     * Java main for when running without JavaFX launcher
-     */
-    public static void main(String[] args) {
-        launch(args);
-    }
-}
+    Group root = new Group();  
+    root.getChildren().add(bar);  
+    Scene scene = new Scene(root,600,400);  
+    primaryStage.setScene(scene);  
+    primaryStage.setTitle("BarChart Example");  
+    primaryStage.show();      
+}  
+public static void main(String[] args) {  
+    launch(args);  
+}  
+}  
