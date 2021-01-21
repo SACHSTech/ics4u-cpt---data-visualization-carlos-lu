@@ -277,8 +277,17 @@ public class games {
         return Double.parseDouble(this.PriceFinal);
     }
     
+<<<<<<< HEAD
     
     public int getRequiredAge () {
         return Integer.parseInt(this.RequiredAge);
     }
+=======
+
+    public int getRequiredAge () {
+        return Integer.parseInt(this.RequiredAge);
+    }
+=======
+    
+>>>>>>> 8170087289a2c7c32340af3e5904267c16276b7f
 }
