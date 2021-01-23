@@ -18,6 +18,11 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import javafx.scene.Group;  
+import javafx.scene.chart.BarChart;  
+import javafx.scene.chart.CategoryAxis;  
+import javafx.scene.chart.NumberAxis;  
+import javafx.scene.chart.XYChart;  
 /*
  * This is the main program that's going to read through the CSV file then put them in games.java to make them objects, just for cleanliness.
  * 
@@ -61,5 +66,78 @@ public class NumberOfGames {
         for (int intCount = 0; intCount < intCounter; intCount++) {
             topSellgames[intCount] = topSellgames(string[intCount], string[intCount+1], string[intCount+2], string[intCount+3], string[intCount+4], string[intCount+5], string[intCount+6], string[intCount+7], string[intCount+8], string[intCount+9], string[intCount+10], string[intCount+11], string[intCount+12], string[intCount+13], string[intCount+14], string[intCount+15], string[intCount+16],  string[intCount+17], string[intCount+18], string[intCount+19], string[intCount+20], string[intCount+21], string[intCount+22], string[intCount+23], string[intCount+24], string[intCount+25], string[intCount+26], string[intCount+27], string[intCount+28], string[intCount+29], string[intCount+30], v string[intCount+31], string[intCount+32], string[intCount+33], string[intCount+34], string[intCount+35], string[intCount+36], string[intCount+37],string[intCount+38], string[intCount+39], string[intCount+40], string[intCount+41], string[intCount+42], string[intCount+43], string[intCount+44], string[intCount+45], string[intCount+46], string[intCount+47], string[intCount+47], string[intCount+48], string[intCount+49], string[intCount+50], string[intCount+51], string[intCount+52], string[intCount+53], string[intCount+54], string[intCount+55], string[intCount+56], string[intCount+57], string[intCount+58], string[intCount+59], string[intCount+60], string[intCount+61], string[intCount+62], string[intCount+63], string[intCount+64], string[intCount+65], string[intCount+66], string[intCount+67], string[intCount+68], string[intCount+69], string[intCount+70], string[intCount+71], string[intCount+72], string[intCount+73], string[intCount+74], string[intCount+75], string[intCount+76]);
         }
-    }
+    }  
 }
+
+
+
+public void start(Stage primaryStage) throws Exception {  
+ 
+    String NonGame = "NonGame";  
+    String Indie = "Indie";  
+    String Action = "Action";  
+    String Adventure = "Adventure";  
+    String Casual = "Casual";
+    String Strategy = "Strategy";
+    String RPG = "RPG";
+    String Simulation = "Simulation";
+    String EarlyAccess = "EarlyAccess";
+    String FreeToPlay = "FreeToPlay";
+    String Sports = "Sports";
+    String Racing = "Racing";
+    String MassivelyMultiplayer = "MassivelyMultiplayer";
+
+    int NonGamenum;  
+    int Indienum;  
+    int Actionnum;  
+    int Adventurenum;  
+    int Casualnum;
+    int Strategynum;
+    int RPGnum;
+    int Simulationnum;
+    int EarlyAccessnum;
+    int FreeToPlaynum;
+    int Sportsnum;
+    int Racingnum;
+    int MassivelyMultiplayernum;   
+
+   
+    CategoryAxis xaxis= new CategoryAxis();  
+    NumberAxis yaxis = new NumberAxis(0,200,10);  
+    xaxis.setLabel("Genre");  
+    yaxis.setLabel("Total Games Sold");  
+
+    BarChart<String,Float> bar = new BarChart(xaxis,yaxis);  
+    bar.setTitle("Top Selling Games Of 2020");  
+      
+    //Configuring Series for XY chart   
+    XYChart.Series<String,Float> series = new XYChart.Series<>();  
+    series.getData().add(new XYChart.Data(NonGame,00));  
+    series.getData().add(new XYChart.Data(Indie,00));  
+    series.getData().add(new XYChart.Data(Action,00));  
+    series.getData().add(new XYChart.Data(Adventure,00));
+    series.getData().add(new XYChart.Data(Casual,00));  
+    series.getData().add(new XYChart.Data(Strategy,00));  
+    series.getData().add(new XYChart.Data(RPG,00));
+    series.getData().add(new XYChart.Data(Simulation,00));  
+    series.getData().add(new XYChart.Data(EarlyAccess,00));  
+    series.getData().add(new XYChart.Data(FreeToPlay,00));  
+    series.getData().add(new XYChart.Data(Sports,00));  
+    series.getData().add(new XYChart.Data(Racing,00));
+    series.getData().add(new XYChart.Data(MassivelyMultiplayer,00));      
+      
+ 
+    bar.getData().add(series);  
+      
+ 
+    Group root = new Group();  
+    root.getChildren().add(bar);  
+    Scene scene = new Scene(root,600,400);  
+    primaryStage.setScene(scene);  
+    primaryStage.setTitle("BarChart");  
+    primaryStage.show();      
+}  
+public static void main(String[] args) {  
+    launch(args);  
+}  
+}  
