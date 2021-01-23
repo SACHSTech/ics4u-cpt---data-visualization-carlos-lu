@@ -23,14 +23,14 @@ public class PieChartSample extends Application {
                 new PieChart.Data("Action", 10),
                 new PieChart.Data("Adventure", 22),
                 new PieChart.Data("Casual", 30),
-                new PieChart.Data("Strategy", 30),
-                new PieChart.Data("RPG", 30),
-                new PieChart.Data("Simulation", 30),
-                new PieChart.Data("EarlyAccess", 30),
-                new PieChart.Data("FreeToPlay", 30),
-                new PieChart.Data("Sports", 30),
-                new PieChart.Data("Racing", 30),
-                new PieChart.Data("MassivelyMultiplayer", 30));
+                new PieChart.Data("Strategy", 21),
+                new PieChart.Data("RPG", 23),
+                new PieChart.Data("Simulation", 11),
+                new PieChart.Data("EarlyAccess", 9),
+                new PieChart.Data("FreeToPlay", 10),
+                new PieChart.Data("Sports", 29),
+                new PieChart.Data("Racing", 24),
+                new PieChart.Data("MassivelyMultiplayer", 26));
         final PieChart chart = new PieChart(pieChartData);
         chart.setTitle("Total Games sold 2020");
 
