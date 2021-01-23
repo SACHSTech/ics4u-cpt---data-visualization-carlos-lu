@@ -1,6 +1,6 @@
 package Datasets;
 
-import DataSheet;
+import DataSheets;
 
 public class games {
 
@@ -221,73 +221,6 @@ public class games {
         return Boolean.parseBoolean(this.GenreIsMassivelyMultiplayer);
     }
 
-    public boolean getGenreIsIndie() {
-        return Boolean.parseBoolean(this.GenreIsIndie);
-    }
-
-    public boolean getGenreIsAction() {
-        return Boolean.parseBoolean(this.GenreIsAction);
-    }
-
-    public boolean getGenreIsAdventure() {
-        return Boolean.parseBoolean(this.GenreIsAdventure);
-    }
-
-    public boolean getGenreIsCasual() {
-        return Boolean.parseBoolean(this.GenreIsCasual);
-    }
-
-    public boolean getGenreIsStrategy() {
-        return Boolean.parseBoolean(this.GenreIsIndie);
-    }
-
-    public boolean getGenreIsRPG() {
-        return Boolean.parseBoolean(this.GenreIsIndie);
-    }
-
-    public boolean getGenreIsSimulation() {
-        return Boolean.parseBoolean(this.GenreIsIndie);
-    }
-
-    public boolean getGenreIsEarlyAccess() {
-        return Boolean.parseBoolean(this.GenreIsEarlyAccess);
-    }
-
-    public boolean getGenreIsSports() {
-        return Boolean.parseBoolean(this.GenreIsSports);
-    }
-
-    public boolean getGenreIsRacing() {
-        return Boolean.parseBoolean(this.GenreIsRacing);
-    }
-
-    public String getRelaeseDate() {
-        return this.ReleaseDate;
-    }
-
-    public double getPriceCurrency () {
-        return Double.parseDouble(this.PriceCurrency);
-    }
-
-    public double getPriceInitial () {
-        return Double.parseDouble(this.PriceInitial);
-    }
-
-    public double getPriceFinal() {
-        return Double.parseDouble(this.PriceFinal);
-    }
     
-<<<<<<< HEAD
     
-    public int getRequiredAge () {
-        return Integer.parseInt(this.RequiredAge);
-    }
-=======
-
-    public int getRequiredAge () {
-        return Integer.parseInt(this.RequiredAge);
-    }
-=======
-    
->>>>>>> 8170087289a2c7c32340af3e5904267c16276b7f
 }
