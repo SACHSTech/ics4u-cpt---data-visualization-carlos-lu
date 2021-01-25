@@ -219,8 +219,5 @@ public class games {
     }
     public boolean getGenreIsMassivelyMultiplayer() {
         return Boolean.parseBoolean(this.GenreIsMassivelyMultiplayer);
-    }
-
-    
-    
+    }  
 }
