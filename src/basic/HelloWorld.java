@@ -36,23 +36,10 @@ public class HelloWorld extends Application {
         btn1.setOnAction(new EventHandler<ActionEvent>() {
  
             @Override
-            public void handle(ActionEvent event) {
-                int NonGamenum;  
-                int Indienum;  
-                int Actionnum;  
-                int Adventurenum;  
-                int Casualnum;
-                int Strategynum;
-                int RPGnum;
-                int Simulationnum;
-                int EarlyAccessnum;
-                int FreeToPlaynum;
-                int Sportsnum;
-                int Racingnum;
-                int MassivelyMultiplayernum;   
-               
+            public void handle(ActionEvent event) {   
+
                 CategoryAxis xaxis= new CategoryAxis();  
-                NumberAxis yaxis = new NumberAxis(0,200,10);  
+                NumberAxis yaxis = new NumberAxis(0,70,10);  
                 xaxis.setLabel("Genre");  
                 yaxis.setLabel("Total Games Sold");  
             
@@ -61,18 +48,18 @@ public class HelloWorld extends Application {
                   
                 //Configuring Series for XY chart   
                 XYChart.Series<String,Float> series = new XYChart.Series<>();  
-                series.getData().add(new XYChart.Data("NonGame",00));  
-                series.getData().add(new XYChart.Data("Indie",00));  
-                series.getData().add(new XYChart.Data("Action",00));  
-                series.getData().add(new XYChart.Data("Adventure",00));
-                series.getData().add(new XYChart.Data("Casual",00));  
-                series.getData().add(new XYChart.Data("Strategy",00));  
-                series.getData().add(new XYChart.Data("RPG",00));
-                series.getData().add(new XYChart.Data("Simulation",00));  
-                series.getData().add(new XYChart.Data("EarlyAccess",00));  
-                series.getData().add(new XYChart.Data("FreeToPlay",00));  
-                series.getData().add(new XYChart.Data("Sports",00));  
-                series.getData().add(new XYChart.Data("Racing",00));
+                series.getData().add(new XYChart.Data("NonGame",1));  
+                series.getData().add(new XYChart.Data("Indie",11));  
+                series.getData().add(new XYChart.Data("Action",64));  
+                series.getData().add(new XYChart.Data("Adventure",2));
+                series.getData().add(new XYChart.Data("Casual",2));  
+                series.getData().add(new XYChart.Data("Strategy",22));  
+                series.getData().add(new XYChart.Data("RPG",7));
+                series.getData().add(new XYChart.Data("Simulation",5));  
+                series.getData().add(new XYChart.Data("EarlyAccess",0));  
+                series.getData().add(new XYChart.Data("FreeToPlay",2));  
+                series.getData().add(new XYChart.Data("Sports",0));  
+                series.getData().add(new XYChart.Data("Racing",4));
                 series.getData().add(new XYChart.Data("MassivelyMultiplayer",00));      
                   
              
@@ -111,20 +98,6 @@ public class HelloWorld extends Application {
         btn2.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
-                
-                int NonGamenum;  
-                int Indienum;  
-                int Actionnum;  
-                int Adventurenum;  
-                int Casualnum;
-                int Strategynum;
-                int RPGnum;
-                int Simulationnum;
-                int EarlyAccessnum;
-                int FreeToPlaynum;
-                int Sportsnum;
-                int Racingnum;
-                int MassivelyMultiplayernum;
 
                     Scene scene = new Scene(new Group());
 					primaryStage.setTitle("Total Games sold 2020");
@@ -133,19 +106,19 @@ public class HelloWorld extends Application {
              
                     ObservableList<PieChart.Data> pieChartData =
                             FXCollections.observableArrayList(
-                            new PieChart.Data("NonGame", 13),
-                            new PieChart.Data("Indie", 25),
-                            new PieChart.Data("Action", 10),
-                            new PieChart.Data("Adventure", 22),
-                            new PieChart.Data("Casual", 30),
-                            new PieChart.Data("Strategy", 21),
-                            new PieChart.Data("RPG", 23),
-                            new PieChart.Data("Simulation", 11),
-                            new PieChart.Data("EarlyAccess", 9),
-                            new PieChart.Data("FreeToPlay", 10),
-                            new PieChart.Data("Sports", 29),
-                            new PieChart.Data("Racing", 24),
-                            new PieChart.Data("MassivelyMultiplayer", 26));
+                            new PieChart.Data("NonGame", 1),
+                            new PieChart.Data("Indie", 11),
+                            new PieChart.Data("Action", 64),
+                            new PieChart.Data("Adventure", 2),
+                            new PieChart.Data("Casual", 2),
+                            new PieChart.Data("Strategy", 22),
+                            new PieChart.Data("RPG", 7),
+                            new PieChart.Data("Simulation", 5),
+                            new PieChart.Data("EarlyAccess", 0),
+                            new PieChart.Data("FreeToPlay", 2),
+                            new PieChart.Data("Sports", 0),
+                            new PieChart.Data("Racing", 4),
+                            new PieChart.Data("MassivelyMultiplayer", 0));
                     final PieChart chart = new PieChart(pieChartData);
                     chart.setTitle("Total Games sold 2020");
 
