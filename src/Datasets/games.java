@@ -176,6 +176,14 @@ public class games {
         return QueryName;
     }
 
+    public String getResponseID() {
+        return ResponseID;
+    }
+
+    public String getResponseName() {
+        return ResponseName;
+    }
+
     public boolean getIsFree() {
         return Boolean.parseBoolean(IsFree);
     }

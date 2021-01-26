@@ -36,6 +36,10 @@ import javafx.stage.Stage;
  */
 
 public class NumberOfGames extends Application{
+
+    //public variables
+    public int[] intCount;
+
     //run 
     public static void main(String[] args) throws IOException {
         
@@ -66,15 +70,17 @@ public class NumberOfGames extends Application{
         gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv")); //reopen file
         gamesCSV.useDelimiter("[,\n]"); //pattern use , to seperate
 
-        int intGames = intCounter / 77 - 1; // Total of (usable) items in CSV file
+        int intGames = intCounter / 78 - 1; // Total of (usable) items in CSV file
         games[] Games = new games[intGames]; //set list 
 
-        for (int intCount = 1; intCount <= intGames; intCount++) {
-            Games[intCount-1] = new games(string[intCount*77], string[intCount*77+1], string[intCount*77+2], string[intCount*77+3], string[intCount*77+4], string[intCount*77+5], string[intCount*77+6], string[intCount*77+7], string[intCount*77+8], string[intCount*77+9], string[intCount*77+10], string[intCount*77+11], string[intCount*77+12], string[intCount*77+13], string[intCount*77+14], string[intCount*77+15], string[intCount*77+16],  string[intCount*77+17], string[intCount*77+18], string[intCount*77+19], string[intCount*77+20], string[intCount*77+21], string[intCount*77+22], string[intCount*77+23], string[intCount*77+24], string[intCount*77+25], string[intCount*77+26], string[intCount*77+27], string[intCount*77+28], string[intCount*77+29], string[intCount*77+30], string[intCount*77+31], string[intCount*77+32], string[intCount*77+33], string[intCount*77+34], string[intCount*77+35], string[intCount*77+36], string[intCount*77+37],string[intCount*77+38], string[intCount*77+39], string[intCount*77+40], string[intCount*77+41], string[intCount*77+42], string[intCount*77+43], string[intCount*77+44], string[intCount*77+45], string[intCount*77+46], string[intCount*77+47], string[intCount*77+47], string[intCount*77+48], string[intCount*77+49], string[intCount*77+50], string[intCount*77+51], string[intCount*77+52], string[intCount*77+53], string[intCount*77+54], string[intCount*77+55], string[intCount*77+56], string[intCount*77+57], string[intCount*77+58], string[intCount*77+59], string[intCount*77+60], string[intCount*77+61], string[intCount*77+62], string[intCount*77+63], string[intCount*77+64], string[intCount*77+65], string[intCount*77+66], string[intCount*77+67], string[intCount*77+68], string[intCount*77+69], string[intCount*77+70], string[intCount*77+71], string[intCount*77+72], string[intCount*77+73], string[intCount*77+74], string[intCount*77+75], string[intCount*77+76]);
-        }
+        gamesCSV.close(); // Games Object created, CSV file close.
+        System.out.println(string[78]);
 
-        gamesCSV.close(); // Games Object created, CSV file not needed.
-        System.out.println(string[0]);
+        for (int intCount = 1; intCount <= intGames; intCount++) {
+            Games[intCount-1] = new games(string[intCount*78], string[intCount*78+1], string[intCount*78+2], string[intCount*78+3], string[intCount*78+4], string[intCount*78+5], string[intCount*78+6], string[intCount*78+7], string[intCount*78+8], string[intCount*78+9], string[intCount*78+10], string[intCount*78+11], string[intCount*78+12], string[intCount*78+13], string[intCount*78+14], string[intCount*78+15], string[intCount*78+16],  string[intCount*78+17], string[intCount*78+18], string[intCount*78+19], string[intCount*78+20], string[intCount*78+21], string[intCount*78+22], string[intCount*78+23], string[intCount*78+24], string[intCount*78+25], string[intCount*78+26], string[intCount*78+27], string[intCount*78+28], string[intCount*78+29], string[intCount*78+30], string[intCount*78+31], string[intCount*78+32], string[intCount*78+33], string[intCount*78+34], string[intCount*78+35], string[intCount*78+36], string[intCount*78+37],string[intCount*78+38], string[intCount*78+39], string[intCount*78+40], string[intCount*78+41], string[intCount*78+42], string[intCount*78+43], string[intCount*78+44], string[intCount*78+45], string[intCount*78+46], string[intCount*78+47], string[intCount*78+47], string[intCount*78+48], string[intCount*78+49], string[intCount*78+50], string[intCount*78+51], string[intCount*78+52], string[intCount*78+53], string[intCount*78+54], string[intCount*78+55], string[intCount*78+56], string[intCount*78+57], string[intCount*78+58], string[intCount*78+59], string[intCount*78+60], string[intCount*78+61], string[intCount*78+62], string[intCount*78+63], string[intCount*78+64], string[intCount*78+65], string[intCount*78+66], string[intCount*78+67], string[intCount*78+68], string[intCount*78+69], string[intCount*78+70], string[intCount*78+71], string[intCount*78+72], string[intCount*78+73], string[intCount*78+74], string[intCount*78+75], string[intCount*78+76]);
+        } // String array to object method
+
+        System.out.println(Games[1].getResponseName());
 
         /*
          * Rest of the things are just sorting
