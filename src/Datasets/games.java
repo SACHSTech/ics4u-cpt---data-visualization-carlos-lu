@@ -165,59 +165,59 @@ public class games {
     }
 
     public String getWebsite() {
-        return this.Website;
+        return Website;
     }
 
     public int getQueryID() {
-        return Integer.parseInt(this.QueryID);
+        return Integer.parseInt(QueryID);
     }
 
     public String getQueryName() {
-        return this.QueryName;
+        return QueryName;
     }
 
     public boolean getIsFree() {
-        return Boolean.parseBoolean(this.IsFree);
+        return Boolean.parseBoolean(IsFree);
     }
 
     public boolean getGenreIsNonGame() {
-        return Boolean.parseBoolean(this.GenreIsNonGame);
+        return Boolean.parseBoolean(GenreIsNonGame);
     }
 
     public boolean getGenreIsFreeToPlay() {
-        return Boolean.parseBoolean(this.GenreIsFreeToPlay);
+        return Boolean.parseBoolean(GenreIsFreeToPlay);
     }
     public boolean getGenreIsIndie() {
-        return Boolean.parseBoolean(this.GenreIsIndie);
+        return Boolean.parseBoolean(GenreIsIndie);
     }
     public boolean getGenreIsAction() {
-        return Boolean.parseBoolean(this.GenreIsAction);
+        return Boolean.parseBoolean(GenreIsAction);
     }
     public boolean getGenreIsAdventure() {
-        return Boolean.parseBoolean(this.GenreIsAdventure);
+        return Boolean.parseBoolean(GenreIsAdventure);
     }
     public boolean getGenreIsCasual() {
-        return Boolean.parseBoolean(this.GenreIsCasual);
+        return Boolean.parseBoolean(GenreIsCasual);
     }
     public boolean getGenreIsStrategy() {
-        return Boolean.parseBoolean(this.GenreIsStrategy);
+        return Boolean.parseBoolean(GenreIsStrategy);
     }
     public boolean getGenreIsRPG() {
-        return Boolean.parseBoolean(this.GenreIsRPG);
+        return Boolean.parseBoolean(GenreIsRPG);
     }
     public boolean getGenreIsSimulation() {
-        return Boolean.parseBoolean(this.GenreIsSimulation);
+        return Boolean.parseBoolean(GenreIsSimulation);
     }
     public boolean getGenreIsEarlyAccess() {
-        return Boolean.parseBoolean(this.GenreIsEarlyAccess);
+        return Boolean.parseBoolean(GenreIsEarlyAccess);
     }
     public boolean getGenreIsSports() {
-        return Boolean.parseBoolean(this.GenreIsSports);
+        return Boolean.parseBoolean(GenreIsSports);
     }
     public boolean getGenreIsRacing() {
-        return Boolean.parseBoolean(this.GenreIsRacing);
+        return Boolean.parseBoolean(GenreIsRacing);
     }
     public boolean getGenreIsMassivelyMultiplayer() {
-        return Boolean.parseBoolean(this.GenreIsMassivelyMultiplayer);
+        return Boolean.parseBoolean(GenreIsMassivelyMultiplayer);
     }  
 }
