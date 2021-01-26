@@ -131,22 +131,22 @@ public class HelloWorld extends Application {
                 Vbox.getChildren().addAll(btn3);
                 btn3.setOnAction(new EventHandler<ActionEvent>() {
 
-                    @Override
-                    public void handle(ActionEvent arg0) {
-                    VBox Vbox = new VBox();
-                    Vbox.setPadding(new Insets(15, 12, 15, 12));
-                    Vbox.setSpacing(10);
-                    Vbox.getChildren().addAll(btn1,btn2);
-                    primaryStage.setScene(new Scene(Vbox, 600, 500));
-                    primaryStage.show();
-                    }
-                 
-                    
-                });
-            
-                    ((Group) scene.getRoot()).getChildren().addAll(chart,btn3);
-                    primaryStage.setScene(scene);
+                @Override
+                public void handle(ActionEvent arg0) {
+                VBox Vbox = new VBox();
+                Vbox.setPadding(new Insets(15, 12, 15, 12));
+                Vbox.setSpacing(10);
+                Vbox.getChildren().addAll(btn1,btn2);
+                primaryStage.setScene(new Scene(Vbox, 600, 500));
+                primaryStage.show();
                 }
+                
+                
+            });
+        
+                ((Group) scene.getRoot()).getChildren().addAll(chart,btn3);
+                primaryStage.setScene(scene);
+            }
         });
         VBox Vbox = new VBox();
         Vbox.setPadding(new Insets(15, 12, 15, 12));
