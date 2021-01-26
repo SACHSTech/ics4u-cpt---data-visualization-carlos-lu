@@ -18,11 +18,6 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-import javafx.scene.Group;  
-import javafx.scene.chart.BarChart;  
-import javafx.scene.chart.CategoryAxis;  
-import javafx.scene.chart.NumberAxis;  
-import javafx.scene.chart.XYChart;  
 /*
  * This is the main program that's going to read through the CSV file then put them in games.java to make them objects, just for cleanliness.
  * 
@@ -30,44 +25,44 @@ import javafx.scene.chart.XYChart;
  */
 
 public class NumberOfGames {
-    public void start(Stage primaryStage) throws Exception {  
-        
+    //run 
     public static void main(String[] args) throws IOException {
+        
         //String Variables
         int intCounter = 0;
         String[] string;
 
-        //set bufferReader for CSV file
+        //set Scanner for CSV file
         Scanner gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv"));
 
-        gamesCSV.useDelimiter(","); //pattern use , to seperate
+        gamesCSV.useDelimiter("[,\n]"); //pattern use , to seperate
 
         //read till the last line
-        while (gamesCSV.hasNext() == true) {
+        while (gamesCSV.hasNext() != false) {
+            System.out.println(gamesCSV.next());;
             intCounter++;
-            System.out.println(gamesCSV.next());
         }
 
         string = new String[intCounter]; //Exactly how many strings there are.
 
         gamesCSV.close(); //close file
         gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv")); //reopen file
+        gamesCSV.useDelimiter("[,\n]"); //pattern use , to seperate
 
-        games[] topSellgames = new games[intCounter];
         for (int intCount = 0; intCount < intCounter; intCount++) {
-            string[intCount] = gamesCSV.next();
+            string[intCount] = gamesCSV.next(); // String array
         }
         
         gamesCSV.close(); //close file
         gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv")); //reopen file
+        gamesCSV.useDelimiter("[,\n]"); //pattern use , to seperate
 
-        intCounter = intCounter / 77; // There are 77 private variables in a line in csv file
+        int intGames = intCounter / 77 - 1; // Total of (usable) items in CSV file
+        games[] Games = new games[intGames]; //set list 
 
-        for (int intCount = 0; intCount < intCounter; intCount++) {
-            topSellgames[intCount] = topSellgames(string[intCount], string[intCount+1], string[intCount+2], string[intCount+3], string[intCount+4], string[intCount+5], string[intCount+6], string[intCount+7], string[intCount+8], string[intCount+9], string[intCount+10], string[intCount+11], string[intCount+12], string[intCount+13], string[intCount+14], string[intCount+15], string[intCount+16],  string[intCount+17], string[intCount+18], string[intCount+19], string[intCount+20], string[intCount+21], string[intCount+22], string[intCount+23], string[intCount+24], string[intCount+25], string[intCount+26], string[intCount+27], string[intCount+28], string[intCount+29], string[intCount+30], v string[intCount+31], string[intCount+32], string[intCount+33], string[intCount+34], string[intCount+35], string[intCount+36], string[intCount+37],string[intCount+38], string[intCount+39], string[intCount+40], string[intCount+41], string[intCount+42], string[intCount+43], string[intCount+44], string[intCount+45], string[intCount+46], string[intCount+47], string[intCount+47], string[intCount+48], string[intCount+49], string[intCount+50], string[intCount+51], string[intCount+52], string[intCount+53], string[intCount+54], string[intCount+55], string[intCount+56], string[intCount+57], string[intCount+58], string[intCount+59], string[intCount+60], string[intCount+61], string[intCount+62], string[intCount+63], string[intCount+64], string[intCount+65], string[intCount+66], string[intCount+67], string[intCount+68], string[intCount+69], string[intCount+70], string[intCount+71], string[intCount+72], string[intCount+73], string[intCount+74], string[intCount+75], string[intCount+76]);
+        for (int intCount = 1; intCount < intGames; intCount++) {
+            Games[intCount-1] = new games(string[intCount*77], string[intCount*77+1], string[intCount*77+2], string[intCount*77+3], string[intCount*77+4], string[intCount*77+5], string[intCount*77+6], string[intCount*77+7], string[intCount*77+8], string[intCount*77+9], string[intCount*77+10], string[intCount*77+11], string[intCount*77+12], string[intCount*77+13], string[intCount*77+14], string[intCount*77+15], string[intCount*77+16],  string[intCount*77+17], string[intCount*77+18], string[intCount*77+19], string[intCount*77+20], string[intCount*77+21], string[intCount*77+22], string[intCount*77+23], string[intCount*77+24], string[intCount*77+25], string[intCount*77+26], string[intCount*77+27], string[intCount*77+28], string[intCount*77+29], string[intCount*77+30], string[intCount*77+31], string[intCount*77+32], string[intCount*77+33], string[intCount*77+34], string[intCount*77+35], string[intCount*77+36], string[intCount*77+37],string[intCount*77+38], string[intCount*77+39], string[intCount*77+40], string[intCount*77+41], string[intCount*77+42], string[intCount*77+43], string[intCount*77+44], string[intCount*77+45], string[intCount*77+46], string[intCount*77+47], string[intCount*77+47], string[intCount*77+48], string[intCount*77+49], string[intCount*77+50], string[intCount*77+51], string[intCount*77+52], string[intCount*77+53], string[intCount*77+54], string[intCount*77+55], string[intCount*77+56], string[intCount*77+57], string[intCount*77+58], string[intCount*77+59], string[intCount*77+60], string[intCount*77+61], string[intCount*77+62], string[intCount*77+63], string[intCount*77+64], string[intCount*77+65], string[intCount*77+66], string[intCount*77+67], string[intCount*77+68], string[intCount*77+69], string[intCount*77+70], string[intCount*77+71], string[intCount*77+72], string[intCount*77+73], string[intCount*77+74], string[intCount*77+75], string[intCount*77+76]);
         }
-    }  
+        System.out.println(Games[0].getGenreIsNonGame());
+    }
 }
-
-
-
