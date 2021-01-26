@@ -48,7 +48,7 @@ public class NumberOfGames extends Application{
 
         //read till the last line
         while (gamesCSV.hasNext() != false) {
-            System.out.println(gamesCSV.next());;
+            gamesCSV.next();;
             intCounter++;
         }
 
@@ -74,7 +74,7 @@ public class NumberOfGames extends Application{
         }
 
         gamesCSV.close(); // Games Object created, CSV file not needed.
-        System.out.println(Games[0].getQueryName());
+        System.out.println(Games[1].getWebsite());
 
         /*
          * Rest of the things are just sorting
