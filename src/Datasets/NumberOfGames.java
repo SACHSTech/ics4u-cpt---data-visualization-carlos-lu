@@ -74,7 +74,7 @@ public class NumberOfGames extends Application{
         }
 
         gamesCSV.close(); // Games Object created, CSV file not needed.
-        System.out.println(Games[0].getQueryID());
+        System.out.println(string[0]);
 
         /*
          * Rest of the things are just sorting
