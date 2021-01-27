@@ -143,19 +143,19 @@ public class NumberOfGames extends Application{
                   
                 //Configuring Series for XY chart   
                 XYChart.Series<String,Float> series = new XYChart.Series<>();  
-                series.getData().add(new XYChart.Data("NonGame",1));  
-                series.getData().add(new XYChart.Data("Indie",11));  
-                series.getData().add(new XYChart.Data("Action",64));  
-                series.getData().add(new XYChart.Data("Adventure",2));
-                series.getData().add(new XYChart.Data("Casual",2));  
-                series.getData().add(new XYChart.Data("Strategy",22));  
-                series.getData().add(new XYChart.Data("RPG",7));
-                series.getData().add(new XYChart.Data("Simulation",5));  
-                series.getData().add(new XYChart.Data("EarlyAccess",0));  
-                series.getData().add(new XYChart.Data("FreeToPlay",2));  
-                series.getData().add(new XYChart.Data("Sports",0));  
-                series.getData().add(new XYChart.Data("Racing",4));
-                series.getData().add(new XYChart.Data("MassivelyMultiplayer",00));      
+                series.getData().add(new XYChart.Data("NonGame", intGamesCount[7]));  
+                series.getData().add(new XYChart.Data("Indie", intGamesCount[5]));  
+                series.getData().add(new XYChart.Data("Action", intGamesCount[0]));  
+                series.getData().add(new XYChart.Data("Adventure", intGamesCount[1]));
+                series.getData().add(new XYChart.Data("Casual", intGamesCount[2]));  
+                series.getData().add(new XYChart.Data("Strategy", intGamesCount[12]));  
+                series.getData().add(new XYChart.Data("RPG", intGamesCount[8]));
+                series.getData().add(new XYChart.Data("Simulation", intGamesCount[10]));  
+                series.getData().add(new XYChart.Data("EarlyAccess", intGamesCount[3]));  
+                series.getData().add(new XYChart.Data("FreeToPlay", intGamesCount[4]));  
+                series.getData().add(new XYChart.Data("Sports", intGamesCount[11]));  
+                series.getData().add(new XYChart.Data("Racing", intGamesCount[9]));
+                series.getData().add(new XYChart.Data("MassivelyMultiplayer", intGamesCount[6]));      
                   
              
                 bar.getData().add(series); 
