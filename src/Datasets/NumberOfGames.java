@@ -37,14 +37,13 @@ import javafx.stage.Stage;
 
 public class NumberOfGames extends Application{
 
-    //public variables
-    public int[] intCount;
+    public static int intCounter = 0;
+    public static String[] string;
+    public static int[] intGamesCount;
+    public static games[] Games;
 
     //run 
     public static void main(String[] args) throws IOException {
-        
-        int intCounter = 0;
-        String[] string;
 
         //set Scanner for CSV file
         Scanner gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv"));
@@ -71,7 +70,7 @@ public class NumberOfGames extends Application{
         gamesCSV.useDelimiter("[,\n]"); //pattern use , to seperate
 
         int intGames = intCounter / 78 - 1; // Total of (usable) items in CSV file
-        games[] Games = new games[intGames]; //set list 
+        Games = new games[intGames]; //set list 
 
         gamesCSV.close(); // Games Object created, CSV file close.
         System.out.println(string[78]);
@@ -80,15 +79,46 @@ public class NumberOfGames extends Application{
             Games[intCount-1] = new games(string[intCount*78], string[intCount*78+1], string[intCount*78+2], string[intCount*78+3], string[intCount*78+4], string[intCount*78+5], string[intCount*78+6], string[intCount*78+7], string[intCount*78+8], string[intCount*78+9], string[intCount*78+10], string[intCount*78+11], string[intCount*78+12], string[intCount*78+13], string[intCount*78+14], string[intCount*78+15], string[intCount*78+16],  string[intCount*78+17], string[intCount*78+18], string[intCount*78+19], string[intCount*78+20], string[intCount*78+21], string[intCount*78+22], string[intCount*78+23], string[intCount*78+24], string[intCount*78+25], string[intCount*78+26], string[intCount*78+27], string[intCount*78+28], string[intCount*78+29], string[intCount*78+30], string[intCount*78+31], string[intCount*78+32], string[intCount*78+33], string[intCount*78+34], string[intCount*78+35], string[intCount*78+36], string[intCount*78+37],string[intCount*78+38], string[intCount*78+39], string[intCount*78+40], string[intCount*78+41], string[intCount*78+42], string[intCount*78+43], string[intCount*78+44], string[intCount*78+45], string[intCount*78+46], string[intCount*78+47], string[intCount*78+47], string[intCount*78+48], string[intCount*78+49], string[intCount*78+50], string[intCount*78+51], string[intCount*78+52], string[intCount*78+53], string[intCount*78+54], string[intCount*78+55], string[intCount*78+56], string[intCount*78+57], string[intCount*78+58], string[intCount*78+59], string[intCount*78+60], string[intCount*78+61], string[intCount*78+62], string[intCount*78+63], string[intCount*78+64], string[intCount*78+65], string[intCount*78+66], string[intCount*78+67], string[intCount*78+68], string[intCount*78+69], string[intCount*78+70], string[intCount*78+71], string[intCount*78+72], string[intCount*78+73], string[intCount*78+74], string[intCount*78+75], string[intCount*78+76]);
         } // String array to object method
 
-        System.out.println(Games[1].getResponseName());
+        System.out.println(Games[1].getQueryName());
 
         /*
-         * Rest of the things are just sorting
+         * Rest of the things are just search and sort
          */
+
+        intGamesCount = new int[13];
+        for (int intCount = 0; intCount < intGames; intCount++) {
+            if (Games[intCount].getGenreIsAction() == true) {
+                intGamesCount[0]++; // 0 is action
+            }else if (Games[intCount].getGenreIsAdventure() == true){
+                intGamesCount[1]++; // 1 is Adventure
+            }else if (Games[intCount].getGenreIsCasual() == true){
+                intGamesCount[2]++; // 2 is Casual
+            }else if (Games[intCount].getGenreIsEarlyAccess() == true){
+                intGamesCount[3]++; // 3 is EarlyAccess
+            }else if (Games[intCount].getGenreIsFreeToPlay() == true){
+                intGamesCount[4]++; // 4 is free to play
+            }else if (Games[intCount].getGenreIsIndie() == true){
+                intGamesCount[5]++; // 5 is indie
+            }else if (Games[intCount].getGenreIsMassivelyMultiplayer() == true){
+                intGamesCount[6]++; // 6 is MassivelyMultiplayer
+            }else if (Games[intCount].getGenreIsNonGame() == true){
+                intGamesCount[7]++; // 7 is nongame
+            }else if (Games[intCount].getGenreIsRPG() == true){
+                intGamesCount[8]++; // 8 is RPG
+            }else if (Games[intCount].getGenreIsRacing() == true){
+                intGamesCount[9]++; // 9 is Racing
+            }else if (Games[intCount].getGenreIsSimulation() == true){
+                intGamesCount[10]++; // 10 is Simulation
+            }else if (Games[intCount].getGenreIsSports() == true){
+                intGamesCount[11]++; // 11 is sports
+            }else if (Games[intCount].getGenreIsStrategy() == true){
+                intGamesCount[12]++; // 12 is Strategy
+            }
+        }
 
         launch(args);
     }
-
+    
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Data Visulization");
@@ -99,11 +129,11 @@ public class NumberOfGames extends Application{
         btn2.setText("Show Pie Chart");
         btn2.setPrefSize(100, 20);
         btn1.setOnAction(new EventHandler<ActionEvent>() {
- 
+
             @Override
             public void handle(ActionEvent event) {   
 
-                CategoryAxis xaxis= new CategoryAxis();  
+                CategoryAxis xaxis = new CategoryAxis();  
                 NumberAxis yaxis = new NumberAxis(0,70,10);  
                 xaxis.setLabel("Genre");  
                 yaxis.setLabel("Total Games Sold");  
@@ -171,18 +201,18 @@ public class NumberOfGames extends Application{
              
                     ObservableList<PieChart.Data> pieChartData =
                             FXCollections.observableArrayList(
-                            new PieChart.Data("NonGame", 1),
-                            new PieChart.Data("Indie", 11),
-                            new PieChart.Data("Action", 64),
-                            new PieChart.Data("Adventure", 2),
-                            new PieChart.Data("Casual", 2),
-                            new PieChart.Data("Strategy", 22),
-                            new PieChart.Data("RPG", 7),
-                            new PieChart.Data("Simulation", 5),
-                            new PieChart.Data("EarlyAccess", 0),
-                            new PieChart.Data("FreeToPlay", 2),
-                            new PieChart.Data("Sports", 0),
-                            new PieChart.Data("Racing", 4),
+                            new PieChart.Data("NonGame", intGamesCount[7]),
+                            new PieChart.Data("Indie", intGamesCount[5]),
+                            new PieChart.Data("Action", intGamesCount[0]),
+                            new PieChart.Data("Adventure", intGamesCount[2]),
+                            new PieChart.Data("Casual", intGamesCount[12]),
+                            new PieChart.Data("Strategy", intGamesCount[8]),
+                            new PieChart.Data("RPG", intGamesCount[10]),
+                            new PieChart.Data("Simulation", intGamesCount[3]),
+                            new PieChart.Data("EarlyAccess", intGamesCount[4]),
+                            new PieChart.Data("FreeToPlay", intGamesCount[11]),
+                            new PieChart.Data("Sports", intGamesCount[9]),
+                            new PieChart.Data("Racing", intGamesCount[6]),
                             new PieChart.Data("MassivelyMultiplayer", 0));
                     final PieChart chart = new PieChart(pieChartData);
                     chart.setTitle("Total Games sold 2020");
