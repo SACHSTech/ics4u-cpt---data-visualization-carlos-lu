@@ -11,7 +11,10 @@ Edit this page to include:
 *This csv features the ranks of top selling games in the world, from any game-selling platform, PS4, PC , XBOX, DVDs.*
 
 ([games-features.csv](https://data.world/craigkelly/steam-game-data))
-*This csb features the rank of top sellig games in steam, PC - only.*
+*This csv features the rank of top sellig games in steam, PC - only.*
+
+Above csv is the only csv file we are going to use for this CPT, "best selling..." is not part of the deal.
+
 
 
 
