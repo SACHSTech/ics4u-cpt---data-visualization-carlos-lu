@@ -41,6 +41,7 @@ import javafx.scene.input.KeyCombination;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import javafx.scene.text.Font;
 
 /*
  * This is the main program that's going to read through the CSV file then put them in games.java to make them objects, just for cleanliness.
@@ -131,34 +132,34 @@ public class NumberOfGames extends Application{
 
     int X = 600;
     int Y = 600;
+    Font font = Font.font("Times New Roman");
+
+    public Parent createContent() {
+        
+    }
 
     @Override
     public void start(Stage primaryStage) {
+        //PrimaryStage settings
         primaryStage.setTitle("Data Visulization");
-    
-        ToolBar tBar = new  ToolBar();
-
-        Button btHome = new Button("Home");
-        btHome.setPrefSize(100, 20);
-        tBar.getItems().add(btHome);
-
-        Button btViewDataSet = new Button("View Dataset");
-        btHome.setPrefSize(100, 20);
-        tBar.getItems().add(btViewDataSet);
-
-        VBox Vbar = new VBox(tBar);
-        Scene tb = new Scene(Vbar, 960, 600);
-
-        primaryStage.setScene(tb);
-
+        primaryStage.setWidth(X);
+        primaryStage.setHeight(Y);
+        primaryStage.setResizable(false);
+        //buttons in primary Stage
         Button btn1 = new Button();
         btn1.setText("Show Bar Chart");
         btn1.setPrefSize(100, 20);
-        btn1.setTranslateX(X/2);
-        btn1.setTranslateY(Y/2);
+        btn1.setTranslateX(225);
+        btn1.setTranslateY(250);
+        btn1.setFont(font);
         Button btn2 = new Button();
         btn2.setText("Show Pie Chart");
         btn2.setPrefSize(100, 20);
+        btn2.setTranslateX(225);
+        btn2.setTranslateY(275);
+        btn2.setFont(font);
+
+        primaryStage.show();
         
         btn1.setOnAction(new EventHandler<ActionEvent>() {
 
