@@ -20,11 +20,6 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.stage.Stage?>
-<?import java.net.*?>
-<?import javafx.geometry.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
 <fx:root title="Datasets" type="Stage" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Datasets.NumberOfGames">
    <scene>
@@ -44,6 +39,9 @@
                         </source>
                      </ImageInput>
                   </effect>
+                  <cursor>
+                     <Cursor fx:constant="OPEN_HAND" />
+                  </cursor>
                </Canvas>
                <SubScene height="62.0" width="604.0">
                  <root>

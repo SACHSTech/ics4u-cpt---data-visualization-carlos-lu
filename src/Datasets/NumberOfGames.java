@@ -70,8 +70,6 @@ public class NumberOfGames extends Application{
     int X = 600;
     int Y = 600;
     Font font = Font.font("Times New Roman");
-    Button btnbt = new Button();
-    Button btnpt = new Button();
 
     //run 
     public static void main(String[] args) throws IOException {
@@ -243,6 +241,16 @@ public class NumberOfGames extends Application{
              
                 bar.getData().add(series); 
 
+                Slider slider = new Slider();
+                slider.setMin(0);
+                slider.setMax(100);
+                slider.setValue(40);
+                slider.setShowTickLabels(true);
+                slider.setShowTickMarks(true);
+                slider.setMajorTickUnit(50);
+                slider.setMinorTickCount(5);
+                slider.setBlockIncrement(10);
+                
                 Button btn3 = new Button();
                 btn3.setText("Back");
                 btn3.setPrefSize(100, 20);
@@ -250,7 +258,7 @@ public class NumberOfGames extends Application{
                 VBox Vbox = new VBox();
                 Vbox.setPadding(new Insets(15, 12, 15, 12));
                 Vbox.setSpacing(10);
-                Vbox.getChildren().addAll(btn3);
+                Vbox.getChildren().addAll(btn3, slider);
                 btn3.setOnAction(new EventHandler<ActionEvent>() {
 
                     @Override
@@ -349,10 +357,6 @@ public class NumberOfGames extends Application{
 
             @Override
             public void handle(ActionEvent event) {
-                    
-                    int average;
-
-                    average = 
 
                     Text sum = new Text("Total number of games: 13356");
                     Text game = new Text("Top game: Counter Strike/Bottom Game: Ghostlight Manor");
@@ -365,7 +369,7 @@ public class NumberOfGames extends Application{
                     VBox Vbox = new VBox();
                     Vbox.setPadding(new Insets(15, 12, 15, 12));
                     Vbox.setSpacing(10);
-                    Vbox.getChildren().addAll(sum,btn3,game);
+                    Vbox.getChildren().addAll(sum, btn3, game);
                     
                     primaryStage.setScene(new Scene(Vbox, 600, 500));
                     primaryStage.setTitle("Data Visulization");
