@@ -51,6 +51,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
 import javafx.scene.control.Label;
+import javafx.scene.text.Text;
 
 /*
  * This is the main program that's going to read through the CSV file then put them in games.java to make them objects, just for cleanliness.
@@ -142,7 +143,6 @@ public class NumberOfGames extends Application{
                 intGamesCount[12]++; // 12 is Strategy
             }
         }
-
         launch(args);
     }
 
@@ -174,22 +174,42 @@ public class NumberOfGames extends Application{
         //PrimaryStage settings
         primaryStage.setTitle("Data Visulization");
         primaryStage.setResizable(false);
+        //Setting title
+        Text text = new Text("Data Visulization CPT");
+        text.setFont(Font.font("Times New Roman",40));
+        text.setTranslateX(100);
+        text.setTranslateY(-120);
         primaryStage.initStyle(StageStyle.UTILITY);
         primaryStage.show();
 
         //buttons in primary Stage
         Button btn1 = new Button();
         btn1.setText("Show Bar Chart");
-        btn1.setPrefSize(100, 20);
-        btn1.setTranslateX(225);
-        btn1.setTranslateY(250);
+        btn1.setPrefSize(200, 20);
+        btn1.setTranslateX(175);
+        btn1.setTranslateY(100);
         btn1.setFont(font);
         Button btn2 = new Button();
         btn2.setText("Show Pie Chart");
-        btn2.setPrefSize(100, 20);
-        btn2.setTranslateX(225);
-        btn2.setTranslateY(275);
+        btn2.setPrefSize(200, 20);
+        btn2.setTranslateX(175);
+        btn2.setTranslateY(125);
         btn2.setFont(font);
+        Button btn4 = new Button();
+        btn4.setText("Show Top 100 Games in Console");
+        btn4.setPrefSize(200, 20);
+        btn4.setTranslateX(175);
+        btn4.setTranslateY(150);
+        btn4.setFont(font);
+        Button btn5 = new Button();
+        btn5.setText("Show Summary Of Data");
+        btn5.setPrefSize(200, 20);
+        btn5.setTranslateX(175);
+        btn5.setTranslateY(175);
+        btn5.setFont(font);
+
+        primaryStage.hide();
+        primaryStage.show();
         
         btn1.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -238,7 +258,7 @@ public class NumberOfGames extends Application{
                     VBox Vbox = new VBox();
                     Vbox.setPadding(new Insets(15, 12, 15, 12));
                     Vbox.setSpacing(10);
-                    Vbox.getChildren().addAll(btn1,btn2);
+                    Vbox.getChildren().addAll(btn1,btn2,btn4,btn5,text);
                     primaryStage.setScene(new Scene(Vbox, 600, 500));
                     primaryStage.setTitle("Data Visulization");
                     primaryStage.show();
@@ -303,23 +323,71 @@ public class NumberOfGames extends Application{
                 VBox Vbox = new VBox();
                 Vbox.setPadding(new Insets(15, 12, 15, 12));
                 Vbox.setSpacing(10);
-                Vbox.getChildren().addAll(btn1,btn2);
+                Vbox.getChildren().addAll(btn1,btn2,btn4,btn5,text);
                 primaryStage.setScene(new Scene(Vbox, 600, 500));
                 primaryStage.setTitle("Data Visulization");
                 primaryStage.show();
                 }
-                
-                
+            
+
             });
         
                 ((Group) scene.getRoot()).getChildren().addAll(chart,btn3);
                 primaryStage.setScene(scene);
             }
         });
+    btn4.setOnAction(new EventHandler<ActionEvent>() {
+
+        @Override
+        public void handle(ActionEvent event) {
+            for(int intcounter = 0;intcounter < 100;intcounter++){
+                System.out.println(Games[intcounter].getQueryName());
+            }
+            }
+        });
+        btn5.setOnAction(new EventHandler<ActionEvent>() {
+
+            @Override
+            public void handle(ActionEvent event) {
+                    
+                    int average;
+
+                    average = 
+
+                    Text sum = new Text("Total number of games: 13356");
+                    Text game = new Text("Top game: Counter Strike/Bottom Game: Ghostlight Manor");
+
+                    Button btn3 = new Button();
+                    btn3.setText("Back");
+                    btn3.setPrefSize(100, 20);
+                    btn3.setTranslateX(10);
+                    btn3.setTranslateY(300);
+                    VBox Vbox = new VBox();
+                    Vbox.setPadding(new Insets(15, 12, 15, 12));
+                    Vbox.setSpacing(10);
+                    Vbox.getChildren().addAll(sum,btn3,game);
+                    
+                    primaryStage.setScene(new Scene(Vbox, 600, 500));
+                    primaryStage.setTitle("Data Visulization");
+                    primaryStage.show();
+                    btn3.setOnAction(new EventHandler<ActionEvent>() {
+                    @Override
+                    public void handle(ActionEvent arg0) {
+                    VBox Vbox = new VBox();
+                    Vbox.setPadding(new Insets(15, 12, 15, 12));
+                    Vbox.setSpacing(10);
+                    Vbox.getChildren().addAll(btn1,btn2,btn4,btn5,text);
+                    primaryStage.setScene(new Scene(Vbox, 600, 500));
+                    primaryStage.setTitle("Data Visulization");
+                    primaryStage.show();
+                }
+                });
+            }
+            });
         VBox Vbox = new VBox();
         Vbox.setPadding(new Insets(15, 12, 15, 12));
         Vbox.setSpacing(10);
-        Vbox.getChildren().addAll(btn1,btn2);
+        Vbox.getChildren().addAll(btn1,btn2,btn4,btn5,text);
         primaryStage.setScene(new Scene(Vbox, 600, 500));
         primaryStage.setTitle("Data Visulization");
         primaryStage.show();
