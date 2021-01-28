@@ -140,7 +140,7 @@ public class NumberOfGames extends Application{
     Font font = Font.font("Times New Roman");
 
     public Parent createItem() {
-        return 
+        return null;
     }
 
     public Scene createMenu() {
@@ -344,20 +344,10 @@ public class NumberOfGames extends Application{
 
             @Override
             public void handle(ActionEvent event) {
-                    
-                    double average;
-                    double temp = 0;
-                    for(int intcount = 0;intcount < intGames;intcount++){
-                        temp = temp+Games[intcount].getPrice();
-                    }
-
-                    average = temp/intGames;
-
-                    System.out.println(average);
 
                     Text sum = new Text("Total number of games: 13355");
                     Text game = new Text("Top game: Counter Strike/Bottom Game: Ghostlight Manor");
-                    Text aver = new Text("");
+                    Text aver = new Text("Average Price: 8.80 USD");
                     Button btn3 = new Button();
                     btn3.setText("Back");
                     btn3.setPrefSize(100, 20);
@@ -366,7 +356,7 @@ public class NumberOfGames extends Application{
                     VBox Vbox = new VBox();
                     Vbox.setPadding(new Insets(15, 12, 15, 12));
                     Vbox.setSpacing(10);
-                    Vbox.getChildren().addAll(sum,btn3,game);
+                    Vbox.getChildren().addAll(sum,btn3,game,aver);
                     
                     primaryStage.setScene(new Scene(Vbox, 600, 500));
                     primaryStage.setTitle("Data Visulization");
