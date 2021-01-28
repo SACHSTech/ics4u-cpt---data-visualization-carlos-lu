@@ -26,6 +26,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Box;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.Group;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -39,6 +40,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -58,6 +60,7 @@ public class NumberOfGames extends Application{
     public static String[] string;
     public static int[] intGamesCount;
     public static games[] Games;
+    public static int intGames;
 
     //run 
     public static void main(String[] args) throws IOException {
@@ -86,7 +89,7 @@ public class NumberOfGames extends Application{
         gamesCSV = new Scanner(new File("src/Datasets/games-features.csv")); //reopen file
         gamesCSV.useDelimiter("[,\n]"); //pattern use , to seperate
 
-        int intGames = intCounter / 78 - 1; // Total of (usable) items in CSV file
+        intGames = intCounter / 78 - 1; // Total of (usable) items in CSV file
         Games = new games[intGames]; //set list 
 
         gamesCSV.close(); // Games Object created, CSV file close.
@@ -136,8 +139,25 @@ public class NumberOfGames extends Application{
     int Y = 600;
     Font font = Font.font("Times New Roman");
 
-    public Parent createContent() {
+    public Parent createItem() {
+        return 
+    }
+
+    public Scene createMenu() {
+        Menu menu1 = new Menu("Display");
+        CheckMenuItem dataSetCheck = new CheckMenuItem("Datasets");
+        MenuBar menuBar = new MenuBar();
         
+        menu1.getItems().add(dataSetCheck);
+
+        menuBar.getMenus().add(menu1);
+        menuBar.setTranslateX(525);
+        menuBar.setTranslateY(20);
+
+        Group gMenu = new Group(menuBar);
+        Scene sMenu = new Scene(gMenu, 20, 20);
+
+        return sMenu;
     }
 
     @Override
@@ -148,11 +168,18 @@ public class NumberOfGames extends Application{
         primaryStage.setWidth(X);
         primaryStage.setHeight(Y);
         primaryStage.setResizable(false);
+<<<<<<< HEAD
         //Setting title
         Text text = new Text("Data Visulization CPT");
         text.setFont(Font.font("Times New Roman",40));
         text.setTranslateX(100);
         text.setTranslateY(-120);
+=======
+        primaryStage.initStyle(StageStyle.UTILITY);
+
+        primaryStage.show();
+
+>>>>>>> 280787803f1c994e181757a56a49fc3dd7d3419f
         //buttons in primary Stage
         Button btn1 = new Button();
         btn1.setText("Show Bar Chart");
@@ -166,6 +193,7 @@ public class NumberOfGames extends Application{
         btn2.setTranslateX(175);
         btn2.setTranslateY(125);
         btn2.setFont(font);
+<<<<<<< HEAD
         Button btn4 = new Button();
         btn4.setText("Show Top 100 Games in Console");
         btn4.setPrefSize(200, 20);
@@ -181,6 +209,8 @@ public class NumberOfGames extends Application{
 
         primaryStage.hide();
         primaryStage.show();
+=======
+>>>>>>> 280787803f1c994e181757a56a49fc3dd7d3419f
         
         btn1.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -251,9 +281,9 @@ public class NumberOfGames extends Application{
             public void handle(ActionEvent event) {
 
                     Scene scene = new Scene(new Group());
-					primaryStage.setTitle("Most popular Games in 2020 / PieChart");
-                    primaryStage.setWidth(600);
-                    primaryStage.setHeight(500);
+					primaryStage.setTitle("Most Popular Games Over the Decade / PieChart");
+                    primaryStage.setWidth(X);
+                    primaryStage.setHeight(Y);
              
                     ObservableList<PieChart.Data> pieChartData =
                             FXCollections.observableArrayList(
