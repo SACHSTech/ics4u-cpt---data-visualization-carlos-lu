@@ -168,18 +168,15 @@ public class NumberOfGames extends Application{
         primaryStage.setWidth(X);
         primaryStage.setHeight(Y);
         primaryStage.setResizable(false);
-<<<<<<< HEAD
         //Setting title
         Text text = new Text("Data Visulization CPT");
         text.setFont(Font.font("Times New Roman",40));
         text.setTranslateX(100);
         text.setTranslateY(-120);
-=======
         primaryStage.initStyle(StageStyle.UTILITY);
 
         primaryStage.show();
 
->>>>>>> 280787803f1c994e181757a56a49fc3dd7d3419f
         //buttons in primary Stage
         Button btn1 = new Button();
         btn1.setText("Show Bar Chart");
@@ -193,7 +190,6 @@ public class NumberOfGames extends Application{
         btn2.setTranslateX(175);
         btn2.setTranslateY(125);
         btn2.setFont(font);
-<<<<<<< HEAD
         Button btn4 = new Button();
         btn4.setText("Show Top 100 Games in Console");
         btn4.setPrefSize(200, 20);
@@ -209,8 +205,6 @@ public class NumberOfGames extends Application{
 
         primaryStage.hide();
         primaryStage.show();
-=======
->>>>>>> 280787803f1c994e181757a56a49fc3dd7d3419f
         
         btn1.setOnAction(new EventHandler<ActionEvent>() {
 
