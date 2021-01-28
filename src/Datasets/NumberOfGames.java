@@ -8,14 +8,18 @@ import java.io.FileNotFoundException;
 import java.io.FileInputStream;
 import java.io.FileReader;
 import java.io.IOException;
+import java.lang.ModuleLayer.Controller;
 import java.util.Scanner;
 
 import javafx.scene.Parent;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -27,6 +31,7 @@ import javafx.scene.layout.VBox;
 import javafx.scene.shape.Box;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import jdk.incubator.jpackage.internal.Arguments;
 import javafx.scene.Group;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -60,6 +65,12 @@ public class NumberOfGames extends Application{
     public static int[] intGamesCount;
     public static games[] Games;
     public static int intGames;
+
+    int X = 600;
+    int Y = 600;
+    Font font = Font.font("Times New Roman");
+    Button btnbt = new Button();
+    Button btnpt = new Button();
 
     //run 
     public static void main(String[] args) throws IOException {
@@ -135,12 +146,9 @@ public class NumberOfGames extends Application{
         launch(args);
     }
 
-    int X = 600;
-    int Y = 600;
-    Font font = Font.font("Times New Roman");
-
-    public Parent createItem() {
-        return 
+    @FXML
+    void handle(ActionEvent event) {
+        
     }
 
     public Scene createMenu() {
@@ -161,15 +169,12 @@ public class NumberOfGames extends Application{
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
 
         //PrimaryStage settings
         primaryStage.setTitle("Data Visulization");
-        primaryStage.setWidth(X);
-        primaryStage.setHeight(Y);
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.UTILITY);
-
         primaryStage.show();
 
         //buttons in primary Stage

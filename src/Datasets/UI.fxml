@@ -20,18 +20,23 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.stage.Stage?>
+<?import java.net.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <fx:root title="Datasets" type="Stage" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Datasets.NumberOfGames">
    <scene>
       <Scene>
-          <AnchorPane prefHeight="600.0" prefWidth="600.0">
+          <AnchorPane blendMode="MULTIPLY" prefHeight="600.0" prefWidth="600.0">
             <children>
                <Canvas height="38.0" layoutX="14.0" layoutY="14.0" width="103.0">
                   <cursor>
                      <Cursor fx:constant="OPEN_HAND" />
                   </cursor>
                </Canvas>
-               <Canvas height="266.0" layoutY="135.0" width="604.0">
+               <Canvas height="266.0" layoutY="122.0" width="604.0">
                   <effect>
                      <ImageInput x="2.0">
                         <source>
@@ -60,17 +65,23 @@
                      <Font name="Times New Roman" size="12.0" />
                   </font>
                </CheckBox>
-               <VBox layoutX="252.0" layoutY="388.0" prefHeight="75.0" prefWidth="100.0" spacing="20.0">
+               <VBox layoutX="206.0" layoutY="388.0" prefHeight="94.0" prefWidth="192.0" spacing="20.0">
                   <children>
-                     <Button lineSpacing="20.0" mnemonicParsing="false" onAction="#handle" prefHeight="23.0" prefWidth="104.0" text="Show Bar Chart" textFill="#414141">
+                     <Button id="btnBarChart" lineSpacing="20.0" mnemonicParsing="false" onAction="#handle" prefHeight="32.0" prefWidth="190.0" text="Show Bar Chart" textFill="#414141">
                         <font>
-                           <Font name="Webdings" size="12.0" />
+                           <Font name="Amoebic" size="17.0" />
                         </font>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
                      </Button>
-                     <Button mnemonicParsing="false" onAction="#handle" prefHeight="26.0" prefWidth="102.0" text="Show Pie Chart">
+                     <Button id="btnBarChart" lineSpacing="20.0" mnemonicParsing="false" onAction="#handle" prefHeight="32.0" prefWidth="190.0" text="Show Pie Chart" textFill="#414141">
                         <font>
-                           <Font name="Tools" size="12.0" />
+                           <Font name="Amoebic" size="17.0" />
                         </font>
+                        <cursor>
+                           <Cursor fx:constant="HAND" />
+                        </cursor>
                      </Button>
                   </children>
                   <padding>
