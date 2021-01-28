@@ -21,6 +21,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Separator;
 import javafx.scene.control.ToolBar;
+import javafx.scene.control.Tooltip;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Box;
@@ -42,6 +43,7 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.scene.text.Font;
+import javafx.scene.control.Label;
 
 /*
  * This is the main program that's going to read through the CSV file then put them in games.java to make them objects, just for cleanliness.
@@ -140,11 +142,13 @@ public class NumberOfGames extends Application{
 
     @Override
     public void start(Stage primaryStage) {
+
         //PrimaryStage settings
         primaryStage.setTitle("Data Visulization");
         primaryStage.setWidth(X);
         primaryStage.setHeight(Y);
         primaryStage.setResizable(false);
+
         //buttons in primary Stage
         Button btn1 = new Button();
         btn1.setText("Show Bar Chart");
@@ -159,6 +163,7 @@ public class NumberOfGames extends Application{
         btn2.setTranslateY(275);
         btn2.setFont(font);
 
+        primaryStage.hide();
         primaryStage.show();
         
         btn1.setOnAction(new EventHandler<ActionEvent>() {
@@ -196,6 +201,7 @@ public class NumberOfGames extends Application{
                 Button btn3 = new Button();
                 btn3.setText("Back");
                 btn3.setPrefSize(100, 20);
+                btn3.setTranslateY(500);
                 VBox Vbox = new VBox();
                 Vbox.setPadding(new Insets(15, 12, 15, 12));
                 Vbox.setSpacing(10);
@@ -229,7 +235,7 @@ public class NumberOfGames extends Application{
             public void handle(ActionEvent event) {
 
                     Scene scene = new Scene(new Group());
-					primaryStage.setTitle("Total Games sold 2020");
+					primaryStage.setTitle("Most popular Games in 2020 / PieChart");
                     primaryStage.setWidth(600);
                     primaryStage.setHeight(500);
              
@@ -250,8 +256,15 @@ public class NumberOfGames extends Application{
                             new PieChart.Data("MassivelyMultiplayer", 0));
                     final PieChart chart = new PieChart(pieChartData);
                     chart.setTitle("Most popular games over a decade");
+                    chart.setClockwise(false);
 
-                    Button btn3 = new Button();
+                    chart.getData().forEach(data -> {
+                        String percentage = String.format("%.2f%%", (data.getPieValue() / 100));
+                        Tooltip toolTip = new Tooltip(percentage);
+                        Tooltip.install(data.getNode(), toolTip);
+                    });
+
+                Button btn3 = new Button();
                 btn3.setText("Back");
                 btn3.setPrefSize(100, 20);
                 VBox Vbox = new VBox();
