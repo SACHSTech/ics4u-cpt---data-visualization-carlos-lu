@@ -59,6 +59,7 @@ public class NumberOfGames extends Application{
     public static String[] string;
     public static int[] intGamesCount;
     public static games[] Games;
+    public static int intGames;
 
     //run 
     public static void main(String[] args) throws IOException {
@@ -87,7 +88,7 @@ public class NumberOfGames extends Application{
         gamesCSV = new Scanner(new File("src/Datasets/games-features.csv")); //reopen file
         gamesCSV.useDelimiter("[,\n]"); //pattern use , to seperate
 
-        int intGames = intCounter / 78 - 1; // Total of (usable) items in CSV file
+        intGames = intCounter / 78 - 1; // Total of (usable) items in CSV file
         Games = new games[intGames]; //set list 
 
         gamesCSV.close(); // Games Object created, CSV file close.
@@ -142,7 +143,7 @@ public class NumberOfGames extends Application{
         return 
     }
 
-    public Parent createMenu() {
+    public Scene createMenu() {
         Menu menu1 = new Menu("Display");
         CheckMenuItem dataSetCheck = new CheckMenuItem("Datasets");
         MenuBar menuBar = new MenuBar();
@@ -153,13 +154,15 @@ public class NumberOfGames extends Application{
         menuBar.setTranslateX(525);
         menuBar.setTranslateY(20);
 
-        
         Group gMenu = new Group(menuBar);
-        return gMenu;
+        Scene sMenu = new Scene(gMenu, 20, 20);
+
+        return sMenu;
     }
 
     @Override
     public void start(Stage primaryStage) {
+
         //PrimaryStage settings
         primaryStage.setTitle("Data Visulization");
         primaryStage.setWidth(X);
@@ -167,8 +170,6 @@ public class NumberOfGames extends Application{
         primaryStage.setResizable(false);
         primaryStage.initStyle(StageStyle.UTILITY);
 
-        Scene scene = new Scene(createMenu());
-        primaryStage.setScene(scene);
         primaryStage.show();
 
         //buttons in primary Stage

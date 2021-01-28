@@ -1,20 +1,22 @@
-
 # ICS4U - CPT: Data Interaction and Visualization
+# Description of the data set
 
-Edit this page to include:
-* A description of the data set you are using
-* A link to your source for the data set.
-* Why you selected this data set for this project.
-* Embedded or link to your Demo Video
+Our data set includes the top-selling games of 2020. Each line in the CSV file includes what genre the price the number of players, the age rating, release date, etc. We will only be looking at the genre and what rank the games are in the program.
 
-([BestSellingGameInTheWorld.csv](https://www.kaggle.com/aayushmishra1512/best-selling-video-games-in-the-world))
-*This csv features the ranks of top selling games in the world, from any game-selling platform, PS4, PC , XBOX, DVDs.*
 
-([games-features.csv](https://data.world/craigkelly/steam-game-data))
-*This csv features the rank of top sellig games in steam, PC - only.*
+# Link To The Data Used
 
-Above csv is the only csv file we are going to use for this CPT, "best selling..." is not part of the deal.
+([https://data.world/craigkelly/steam-game-data](https://data.world/craigkelly/steam-game-data))
 
-In this JavaFX file, we have CSV read using scanner and encapsulate them into a method object.
+This is the games-feature.csv file
 
-In the games.java, it is a encapsulation of a object, it is used to sort each words into its own specific variable.
+
+# Why we selected this data?
+
+The reason we selected this data for the CPT is that both of us really enjoy video games. It is interesting to see some of the video games that we play is in the best selling games of last year is interesting to see.
+
+
+# Demo Video
+
+Demo Video Found On Assignment Post
+
