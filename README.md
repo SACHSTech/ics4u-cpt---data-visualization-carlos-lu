@@ -15,7 +15,6 @@ Edit this page to include:
 
 Above csv is the only csv file we are going to use for this CPT, "best selling..." is not part of the deal.
 
+In this JavaFX file, we have CSV read using scanner and encapsulate them into a method object.
 
-
-
-Check the [VS Code, Java, and JavaFX Install and Set Up](https://docs.google.com/document/d/1s5oTmY8A8TDZu303p_DaH6CEAcC9xL8-aNX-pAxCcps/edit?usp=sharing) doc for set up and getting started instructions.
+In the games.java, it is a encapsulation of a object, it is used to sort each words into its own specific variable.

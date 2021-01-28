@@ -26,6 +26,7 @@ import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Box;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 import javafx.scene.Group;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
@@ -39,6 +40,7 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCombination;
+import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
@@ -136,18 +138,38 @@ public class NumberOfGames extends Application{
     int Y = 600;
     Font font = Font.font("Times New Roman");
 
-    public Parent createContent() {
+    public Parent createItem() {
+        return 
+    }
+
+    public Parent createMenu() {
+        Menu menu1 = new Menu("Display");
+        CheckMenuItem dataSetCheck = new CheckMenuItem("Datasets");
+        MenuBar menuBar = new MenuBar();
         
+        menu1.getItems().add(dataSetCheck);
+
+        menuBar.getMenus().add(menu1);
+        menuBar.setTranslateX(525);
+        menuBar.setTranslateY(20);
+
+        
+        Group gMenu = new Group(menuBar);
+        return gMenu;
     }
 
     @Override
     public void start(Stage primaryStage) {
-
         //PrimaryStage settings
         primaryStage.setTitle("Data Visulization");
         primaryStage.setWidth(X);
         primaryStage.setHeight(Y);
         primaryStage.setResizable(false);
+        primaryStage.initStyle(StageStyle.UTILITY);
+
+        Scene scene = new Scene(createMenu());
+        primaryStage.setScene(scene);
+        primaryStage.show();
 
         //buttons in primary Stage
         Button btn1 = new Button();
@@ -162,9 +184,6 @@ public class NumberOfGames extends Application{
         btn2.setTranslateX(225);
         btn2.setTranslateY(275);
         btn2.setFont(font);
-
-        primaryStage.hide();
-        primaryStage.show();
         
         btn1.setOnAction(new EventHandler<ActionEvent>() {
 
@@ -235,9 +254,9 @@ public class NumberOfGames extends Application{
             public void handle(ActionEvent event) {
 
                     Scene scene = new Scene(new Group());
-					primaryStage.setTitle("Most popular Games in 2020 / PieChart");
-                    primaryStage.setWidth(600);
-                    primaryStage.setHeight(500);
+					primaryStage.setTitle("Most Popular Games Over the Decade / PieChart");
+                    primaryStage.setWidth(X);
+                    primaryStage.setHeight(Y);
              
                     ObservableList<PieChart.Data> pieChartData =
                             FXCollections.observableArrayList(
