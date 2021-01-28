@@ -143,12 +143,7 @@ public class NumberOfGames extends Application{
         }
         launch(args);
     }
-
-    @FXML
-    void handle(ActionEvent event) {
-        
-    }
-
+    
     public Scene createMenu() {
         Menu menu1 = new Menu("Display");
         CheckMenuItem dataSetCheck = new CheckMenuItem("Datasets");
@@ -358,9 +353,9 @@ public class NumberOfGames extends Application{
             @Override
             public void handle(ActionEvent event) {
 
-                    Text sum = new Text("Total number of games: 13356");
+                    Text sum = new Text("Total number of games: 13355");
                     Text game = new Text("Top game: Counter Strike/Bottom Game: Ghostlight Manor");
-
+                    Text aver = new Text("Average Price: 8.80 USD");
                     Button btn3 = new Button();
                     btn3.setText("Back");
                     btn3.setPrefSize(100, 20);
