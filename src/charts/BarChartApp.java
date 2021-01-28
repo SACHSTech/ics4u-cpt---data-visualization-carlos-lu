@@ -8,7 +8,7 @@ import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;  
 import javafx.scene.chart.NumberAxis;  
 import javafx.scene.chart.XYChart;  
-import javafx.stage.Stage;  
+import javafx.stage.Stage;
 public class BarChartApp extends Application {  
 @Override  
 public void start(Stage primaryStage) throws Exception {  
@@ -26,8 +26,22 @@ public void start(Stage primaryStage) throws Exception {
     String Sports = "Sports";
     String Racing = "Racing";
     String MassivelyMultiplayer = "MassivelyMultiplayer";
-      
 
+    int NonGamenum;  
+    int Indienum;  
+    int Actionnum;  
+    int Adventurenum;  
+    int Casualnum;
+    int Strategynum;
+    int RPGnum;
+    int Simulationnum;
+    int EarlyAccessnum;
+    int FreeToPlaynum;
+    int Sportsnum;
+    int Racingnum;
+    int MassivelyMultiplayernum;   
+
+   
     CategoryAxis xaxis= new CategoryAxis();  
     NumberAxis yaxis = new NumberAxis(0,200,10);  
     xaxis.setLabel("Genre");  
@@ -60,7 +74,7 @@ public void start(Stage primaryStage) throws Exception {
     root.getChildren().add(bar);  
     Scene scene = new Scene(root,600,400);  
     primaryStage.setScene(scene);  
-    primaryStage.setTitle("BarChart Example");  
+    primaryStage.setTitle("BarChart");  
     primaryStage.show();      
 }  
 public static void main(String[] args) {  
