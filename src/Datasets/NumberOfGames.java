@@ -10,6 +10,7 @@ import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
+import javafx.scene.Parent;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -18,15 +19,27 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Separator;
+import javafx.scene.control.ToolBar;
+import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
+import javafx.scene.shape.Box;
 import javafx.stage.Stage;
 import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.scene.chart.BarChart;
 import javafx.scene.chart.CategoryAxis;
 import javafx.scene.chart.NumberAxis;
 import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
+import javafx.scene.control.CheckMenuItem;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.MenuItem;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCombination;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /*
@@ -46,7 +59,7 @@ public class NumberOfGames extends Application{
     public static void main(String[] args) throws IOException {
 
         //set Scanner for CSV file
-        Scanner gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv"));
+        Scanner gamesCSV = new Scanner(new File("src/Datasets/games-features.csv"));
         gamesCSV.useDelimiter("[,\n]"); //pattern use , to seperate
 
         //read till the last line
@@ -58,7 +71,7 @@ public class NumberOfGames extends Application{
         string = new String[intCounter]; //Exactly how many strings there are.
 
         gamesCSV.close(); //close file
-        gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv")); //reopen file
+        gamesCSV = new Scanner(new File("src/Datasets/games-features.csv")); //reopen file
         gamesCSV.useDelimiter("[,\n]"); //pattern use , to seperate
 
         for (int intCount = 0; intCount < intCounter; intCount++) {
@@ -66,23 +79,20 @@ public class NumberOfGames extends Application{
         }
         
         gamesCSV.close(); //close file
-        gamesCSV = new Scanner(new File("src/Datasets/mainGames.csv")); //reopen file
+        gamesCSV = new Scanner(new File("src/Datasets/games-features.csv")); //reopen file
         gamesCSV.useDelimiter("[,\n]"); //pattern use , to seperate
 
         int intGames = intCounter / 78 - 1; // Total of (usable) items in CSV file
         Games = new games[intGames]; //set list 
 
         gamesCSV.close(); // Games Object created, CSV file close.
-        System.out.println(string[78]);
 
         for (int intCount = 1; intCount <= intGames; intCount++) {
             Games[intCount-1] = new games(string[intCount*78], string[intCount*78+1], string[intCount*78+2], string[intCount*78+3], string[intCount*78+4], string[intCount*78+5], string[intCount*78+6], string[intCount*78+7], string[intCount*78+8], string[intCount*78+9], string[intCount*78+10], string[intCount*78+11], string[intCount*78+12], string[intCount*78+13], string[intCount*78+14], string[intCount*78+15], string[intCount*78+16],  string[intCount*78+17], string[intCount*78+18], string[intCount*78+19], string[intCount*78+20], string[intCount*78+21], string[intCount*78+22], string[intCount*78+23], string[intCount*78+24], string[intCount*78+25], string[intCount*78+26], string[intCount*78+27], string[intCount*78+28], string[intCount*78+29], string[intCount*78+30], string[intCount*78+31], string[intCount*78+32], string[intCount*78+33], string[intCount*78+34], string[intCount*78+35], string[intCount*78+36], string[intCount*78+37],string[intCount*78+38], string[intCount*78+39], string[intCount*78+40], string[intCount*78+41], string[intCount*78+42], string[intCount*78+43], string[intCount*78+44], string[intCount*78+45], string[intCount*78+46], string[intCount*78+47], string[intCount*78+47], string[intCount*78+48], string[intCount*78+49], string[intCount*78+50], string[intCount*78+51], string[intCount*78+52], string[intCount*78+53], string[intCount*78+54], string[intCount*78+55], string[intCount*78+56], string[intCount*78+57], string[intCount*78+58], string[intCount*78+59], string[intCount*78+60], string[intCount*78+61], string[intCount*78+62], string[intCount*78+63], string[intCount*78+64], string[intCount*78+65], string[intCount*78+66], string[intCount*78+67], string[intCount*78+68], string[intCount*78+69], string[intCount*78+70], string[intCount*78+71], string[intCount*78+72], string[intCount*78+73], string[intCount*78+74], string[intCount*78+75], string[intCount*78+76]);
         } // String array to object method
 
-        System.out.println(Games[1].getQueryName());
-
         /*
-         * Rest of the things are just search and sort
+         * Rest of the things are just search and sort, except there are nothing to sort
          */
 
         intGamesCount = new int[13];
@@ -118,28 +128,50 @@ public class NumberOfGames extends Application{
 
         launch(args);
     }
-    
+
+    int X = 600;
+    int Y = 600;
+
     @Override
     public void start(Stage primaryStage) {
         primaryStage.setTitle("Data Visulization");
+    
+        ToolBar tBar = new  ToolBar();
+
+        Button btHome = new Button("Home");
+        btHome.setPrefSize(100, 20);
+        tBar.getItems().add(btHome);
+
+        Button btViewDataSet = new Button("View Dataset");
+        btHome.setPrefSize(100, 20);
+        tBar.getItems().add(btViewDataSet);
+
+        VBox Vbar = new VBox(tBar);
+        Scene tb = new Scene(Vbar, 960, 600);
+
+        primaryStage.setScene(tb);
+
         Button btn1 = new Button();
         btn1.setText("Show Bar Chart");
         btn1.setPrefSize(100, 20);
+        btn1.setTranslateX(X/2);
+        btn1.setTranslateY(Y/2);
         Button btn2 = new Button();
         btn2.setText("Show Pie Chart");
         btn2.setPrefSize(100, 20);
+        
         btn1.setOnAction(new EventHandler<ActionEvent>() {
 
             @Override
             public void handle(ActionEvent event) {   
 
                 CategoryAxis xaxis = new CategoryAxis();  
-                NumberAxis yaxis = new NumberAxis(0,70,10);  
+                NumberAxis yaxis = new NumberAxis(0,1210,10);  
                 xaxis.setLabel("Genre");  
-                yaxis.setLabel("Total Games Sold");  
+                yaxis.setLabel("Total Games");  
             
                 BarChart<String,Float> bar = new BarChart(xaxis,yaxis);  
-                bar.setTitle("Top Selling Games Of 2020");  
+                bar.setTitle("Top Selling Games Of 2020 / Genres Split");
                   
                 //Configuring Series for XY chart   
                 XYChart.Series<String,Float> series = new XYChart.Series<>();  
@@ -176,6 +208,7 @@ public class NumberOfGames extends Application{
                     Vbox.setSpacing(10);
                     Vbox.getChildren().addAll(btn1,btn2);
                     primaryStage.setScene(new Scene(Vbox, 600, 500));
+                    primaryStage.setTitle("Data Visulization");
                     primaryStage.show();
                     }
                  
@@ -215,7 +248,7 @@ public class NumberOfGames extends Application{
                             new PieChart.Data("Racing", intGamesCount[6]),
                             new PieChart.Data("MassivelyMultiplayer", 0));
                     final PieChart chart = new PieChart(pieChartData);
-                    chart.setTitle("Total Games sold 2020");
+                    chart.setTitle("Most popular games over a decade");
 
                     Button btn3 = new Button();
                 btn3.setText("Back");
@@ -233,6 +266,7 @@ public class NumberOfGames extends Application{
                 Vbox.setSpacing(10);
                 Vbox.getChildren().addAll(btn1,btn2);
                 primaryStage.setScene(new Scene(Vbox, 600, 500));
+                primaryStage.setTitle("Data Visulization");
                 primaryStage.show();
                 }
                 
@@ -248,7 +282,10 @@ public class NumberOfGames extends Application{
         Vbox.setSpacing(10);
         Vbox.getChildren().addAll(btn1,btn2);
         primaryStage.setScene(new Scene(Vbox, 600, 500));
+        primaryStage.setTitle("Data Visulization");
         primaryStage.show();
     }
+
+    
     
 }
