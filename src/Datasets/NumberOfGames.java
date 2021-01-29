@@ -1,16 +1,9 @@
 package Datasets;
 
-import Datasets.*;
-
 import java.io.*;
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileInputStream;
-import java.io.FileReader;
 import java.io.IOException;
 import java.util.Scanner;
 
-import javafx.scene.Parent;
 import javafx.application.Application;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,12 +12,9 @@ import javafx.event.EventHandler;
 import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.Separator;
-import javafx.scene.control.ToolBar;
 import javafx.scene.control.Tooltip;
 import javafx.scene.control.Slider;
 import javafx.scene.layout.VBox;
-import javafx.scene.shape.Box;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.scene.Group;
@@ -36,16 +26,7 @@ import javafx.scene.chart.XYChart;
 import javafx.scene.control.CheckMenuItem;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
-import javafx.scene.control.MenuItem;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCombination;
-import javafx.scene.layout.GridPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 import javafx.scene.text.Font;
-import javafx.scene.control.Label;
 import javafx.scene.text.Text;
 
 /*
@@ -56,11 +37,15 @@ import javafx.scene.text.Text;
 
 public class NumberOfGames extends Application{
 
-    public static int intCounter = 0;
-    public static String[] string;
-    public static int[] intGamesCount;
-    public static games[] Games;
-    public static int intGames;
+    public static int intCounter = 0; // how many words there are
+    public static String[] string; // total variables in the csv file
+    public static int[] intGamesCount; // Total games in the csv file
+    public static games[] Games; // games encapsulation used to manage variables
+    public static int intGames; // games in a specific genre
+
+    int X = 600; //set primaryStage X
+    int Y = 600; //set primaryStage Y
+    Font font = Font.font("Times New Roman"); //Set primaryStage button Font
 
     //run 
     public static void main(String[] args) throws IOException {
@@ -134,15 +119,7 @@ public class NumberOfGames extends Application{
         }
         launch(args);
     }
-
-    int X = 600;
-    int Y = 600;
-    Font font = Font.font("Times New Roman");
-
-    public Parent createItem() {
-        return null;
-    }
-
+    
     public Scene createMenu() {
         Menu menu1 = new Menu("Display");
         CheckMenuItem dataSetCheck = new CheckMenuItem("Datasets");
@@ -161,12 +138,10 @@ public class NumberOfGames extends Application{
     }
 
     @Override
-    public void start(Stage primaryStage) {
+    public void start(Stage primaryStage) throws IOException {
 
         //PrimaryStage settings
         primaryStage.setTitle("Data Visulization");
-        primaryStage.setWidth(X);
-        primaryStage.setHeight(Y);
         primaryStage.setResizable(false);
         //Setting title
         Text text = new Text("Data Visulization CPT");
@@ -174,7 +149,6 @@ public class NumberOfGames extends Application{
         text.setTranslateX(100);
         text.setTranslateY(-120);
         primaryStage.initStyle(StageStyle.UTILITY);
-
         primaryStage.show();
 
         //buttons in primary Stage
@@ -238,6 +212,16 @@ public class NumberOfGames extends Application{
              
                 bar.getData().add(series); 
 
+                Slider slider = new Slider();
+                slider.setMin(0);
+                slider.setMax(100);
+                slider.setValue(40);
+                slider.setShowTickLabels(true);
+                slider.setShowTickMarks(true);
+                slider.setMajorTickUnit(50);
+                slider.setMinorTickCount(5);
+                slider.setBlockIncrement(10);
+                
                 Button btn3 = new Button();
                 btn3.setText("Back");
                 btn3.setPrefSize(100, 20);
@@ -245,7 +229,7 @@ public class NumberOfGames extends Application{
                 VBox Vbox = new VBox();
                 Vbox.setPadding(new Insets(15, 12, 15, 12));
                 Vbox.setSpacing(10);
-                Vbox.getChildren().addAll(btn3);
+                Vbox.getChildren().addAll(btn3, slider);
                 btn3.setOnAction(new EventHandler<ActionEvent>() {
 
                     @Override
@@ -356,7 +340,7 @@ public class NumberOfGames extends Application{
                     VBox Vbox = new VBox();
                     Vbox.setPadding(new Insets(15, 12, 15, 12));
                     Vbox.setSpacing(10);
-                    Vbox.getChildren().addAll(sum,btn3,game,aver);
+                    Vbox.getChildren().addAll(sum, btn3, game);
                     
                     primaryStage.setScene(new Scene(Vbox, 600, 500));
                     primaryStage.setTitle("Data Visulization");

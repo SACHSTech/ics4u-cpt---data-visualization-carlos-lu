@@ -1,9 +1,9 @@
 package Datasets;
 
-import DataSheets;
+    /* Everything in this method is pretty straight forward, applying each data to a variable.
+     */
 
 public class games {
-
     private String QueryID;
     private String ResponseID;
     private String QueryName;
